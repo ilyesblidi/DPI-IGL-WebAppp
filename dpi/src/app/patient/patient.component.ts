@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DataService } from '../data.service';
@@ -22,7 +22,7 @@ export class PatientComponent implements OnInit {
   patient: any = null;
   id: string = '';
 
-  
+
   stat = {
     consultations: this.consultations.length,
     diagnostiques: this.diagnostiques.length,
@@ -57,9 +57,15 @@ export class PatientComponent implements OnInit {
     alert(item.details);
   }
 
-  //Mock API call to fetch a single patient by ID
   fetchPatientById(id: string) {
-    this.dataService.getData(`users/${id}`).subscribe({
+    const token = localStorage.getItem('authToken'); // Retrieve the token from localStorage
+
+    if (!token) {
+      alert('Authorization token not found');
+      return;
+    }
+
+    this.dataService.getData(`users/${id}`, token).subscribe({
       next: (response: any) => {
         this.patient = response;
       },
@@ -69,5 +75,6 @@ export class PatientComponent implements OnInit {
       }
     });
   }
-  
+
+
 }
