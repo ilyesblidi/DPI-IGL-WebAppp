@@ -24,13 +24,13 @@
           class="search-input hidden"
           maxlength="9"
           (input)="validateNSS($event)"
-          (keyup.enter)="searchByNSS(nssInput)"
+          (keyup.enter)="searchByNSS()"
         />
       </div>
 
       <!-- Action Buttons -->
       <div class="action-buttons">
-        <button class="icon-button" (click)="searchByQRCode()">
+        <button class="icon-button" (click)="SearchByQRCode()">
           <i class="fa fa-qrcode"></i>
         </button>
         <button class="icon-button">

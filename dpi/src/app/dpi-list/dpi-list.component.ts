@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { DataService } from '../data.service';
-import {FormsModule} from '@angular/forms'; // Import the new data service
-//import { DPI } from './dpi-list.component'; // Define the DPI type
 
 interface Patient {
   NSS: string;
@@ -26,65 +25,27 @@ interface DPI {
   templateUrl: './dpi-list.component.html',
   styleUrls: ['./dpi-list.component.css']
 })
-
 export class DpiListComponent implements OnInit {
-
-  searchBarVisible = false;
-  showSearchOptions: boolean = false;
   dpis: DPI[] = [];
   selectedDpi: DPI | null = null;
   showModal: boolean = false;
-  nssInput: string = ''; // Bind to the input field for NSS
-  id: string = '1'; // Example DPI id, can be dynamic
+  searchBarVisible: boolean = false;
+  nssInput: string = ''; // For searching by NSS
+  token: string | null = localStorage.getItem('authToken');
 
-  token: string | null = null; // Will store the token after login
-
-  email: string = 'medecin@gmail.com'; // Example email (could be from a form)
-  password: string = 'bndbndbnd'; // Example password (could be from a form)
-
-  constructor(private router: Router, private dataService: DataService) { }
+  constructor(private router: Router, private dataService: DataService) {}
 
   ngOnInit(): void {
-    this.loginAndFetchData();
+    this.fetchDpis();
   }
 
-  // Login and fetch DPIs after successful login
-  loginAndFetchData(): void {
-    this.dataService.login(this.email, this.password).subscribe({
-      next: (response) => {
-        // Store the token in localStorage for future requests
-        this.token = response.token; // Assuming 'response.token' is the token returned
-        if (typeof this.token === "string") {
-          localStorage.setItem('authToken', this.token);
-        } // Store the token in localStorage
-        this.fetchDpis(); // Fetch DPIs after login
-      },
-      error: (err) => {
-        console.error('Login failed:', err);
-      }
-    });
-  }
-
-  // Toggle search bar visibility
-  toggleSearchBar() {
+  toggleSearchBar(): void {
     this.searchBarVisible = !this.searchBarVisible;
-    const inputField = document.querySelector('.search-input') as HTMLElement;
-    if (this.searchBarVisible) {
-      inputField.classList.add('visible');
-    } else {
-      inputField.classList.remove('visible');
-    }
   }
 
-  // Search by NSS
-  searchByNSS(nss: string): void {
-    const dpi = this.dpis.find((dpi) => dpi.patient?.NSS === nss);
-    if (dpi) {
-      this.selectedDpi = dpi;
-      this.showModal = true; // Show the modal
-    } else {
-      alert('No DPI found with this NSS');
-    }
+  SearchByQRCode(): void {
+    alert('Search by QR Code triggered.');
+    this.searchBarVisible = false;
   }
 
   // Fetch all DPIs
@@ -100,29 +61,45 @@ export class DpiListComponent implements OnInit {
         }
       });
     } else {
-      console.error('No authentication token found');
+      console.error('No authentication token found.');
     }
   }
 
-// Fetch a specific DPI by id
+  // Search by NSS
+  searchByNSS(): void {
+    const dpi = this.dpis.find((dpi) => dpi.patient?.NSS === this.nssInput);
+    if (dpi) {
+      this.selectedDpi = dpi;
+      this.showModal = true;
+    } else {
+      alert('No DPI found with this NSS.');
+    }
+  }
+
+  // View specific DPI details
   viewDpiDetails(dpiId: string): void {
     if (this.token) {
       this.dataService.getDpiById(dpiId, this.token).subscribe({
         next: (data) => {
           this.selectedDpi = data;
-          this.showModal = true; // Show the modal
+          this.showModal = true;
         },
         error: (err) => {
-          alert('Error fetching DPI details');
-          console.error('Error:', err);
+          alert('Error fetching DPI details.');
+          console.error(err);
         }
       });
     } else {
-      console.error('No authentication token found');
+      console.error('No authentication token found.');
     }
   }
 
   // Close modal
+  closeModal(): void {
+    this.showModal = false;
+    this.selectedDpi = null;
+  }
+
   validateNSS(event: any): void {
     // Ensure the input contains only digits and is limited to 9 characters
     const regex = /^[0-9]{0,9}$/; // Only allows numbers up to 9 digits
@@ -131,23 +108,12 @@ export class DpiListComponent implements OnInit {
     }
   }
 
-  closeModal(): void {
-    this.showModal = false;
-    this.selectedDpi = null;
-  }
-
-  searchByQRCode(): void {
-    alert('Search by QR Code triggered.');
-    this.showSearchOptions = false;
-  }
-
-  // Navigate to create new DPI form
   createNewDpi(): void {
     this.router.navigate(['/create-dpi']);
   }
 
-  // Go to dashboard
-  GoToDashBoard() {
+  // Navigate back to dashboard
+  GoToDashBoard(): void {
     this.router.navigate(['/dashboard']);
   }
 }

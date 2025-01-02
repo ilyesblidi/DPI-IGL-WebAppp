@@ -41,7 +41,7 @@ export class PatientComponent implements OnInit {
       console.log('Patient ID:', this.id);  // You can now use the 'id' in your component
     });
 
-    this.fetchPatientById(this.id);
+    //this.fetchPatientById(this.id);
   }
   navigateTo(page: string) {
     this.router.navigate([`/${page}`]);
@@ -57,24 +57,24 @@ export class PatientComponent implements OnInit {
     alert(item.details);
   }
 
-  fetchPatientById(id: string) {
-    const token = localStorage.getItem('authToken'); // Retrieve the token from localStorage
-
-    if (!token) {
-      alert('Authorization token not found');
-      return;
-    }
-
-    this.dataService.getData(`users/${id}`, token).subscribe({
-      next: (response: any) => {
-        this.patient = response;
-      },
-      error: (error: any) => {
-        console.error(error);
-        alert('Error fetching patient data');
-      }
-    });
-  }
+  // fetchPatientById(id: string) {
+  //   const token = localStorage.getItem('authToken'); // Retrieve the token from localStorage
+  //
+  //   if (!token) {
+  //     alert('Authorization token not found');
+  //     return;
+  //   }
+  //
+  //   this.dataService.getData(`users/${id}`, token).subscribe({
+  //     next: (response: any) => {
+  //       this.patient = response;
+  //     },
+  //     error: (error: any) => {
+  //       console.error(error);
+  //       alert('Error fetching patient data');
+  //     }
+  //   });
+  // }
 
 
 }
