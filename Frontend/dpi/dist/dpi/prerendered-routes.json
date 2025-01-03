@@ -1,0 +1,12 @@
+{
+  "routes": {
+    "/": {},
+    "/create-dpi": {},
+    "/dashboard": {},
+    "/dpi-list": {},
+    "/home": {},
+    "/login": {},
+    "/patient": {},
+    "/profil": {}
+  }
+}
