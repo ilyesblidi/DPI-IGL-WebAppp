@@ -1,0 +1,127 @@
+
+    .likebody{
+        margin-left: 15%;
+        margin-right: 15%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 15px;
+        background-color: #E8E7E3;
+        border-radius: 3%;
+        margin-bottom: 20px;
+        padding-bottom: 50px;
+    }
+
+    .medecinName{
+        padding : 0;
+        margin: 0;
+         margin-bottom: 7px;
+    }
+
+
+    .Separation{
+        margin-bottom: 20px;
+    }
+
+
+    body{
+        background-color:#28574E;
+    }
+
+    .quarter{
+        width: 25%;
+        float: left;
+    }
+
+    h2{
+        margin-bottom: 0;
+    }
+
+    .input-text{
+        width: 100%;
+        padding: 5px;
+        height: 100px;
+        border-radius: 5px;
+        border: 0;
+        font-size: large;
+    }
+
+    button{
+        background-color: #28574E;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        border: 0;
+        font-size: large;
+    }
+
+    .radio-label{
+        padding: 0;
+        margin: 0;
+        size: 20px;
+        width: 500px;
+        display: inline;
+        
+    }
+
+    .radio-div{
+        display: block  ;
+    }
+
+    .radio-label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    :host {
+        padding-top: 50px;
+        padding-bottom: 100px;
+        background-color: #28574E;
+        display: block; /* Ensure the component occupies a block-level element */
+      }
+
+      input.read-only {
+        background-color: #f0f0f0; /* Light grey */
+        color: #888888;          /* Dimmed text color */
+        cursor: not-allowed;     /* Show "not allowed" cursor */
+      }
+
+      input[type="checkbox"].disabled {
+        cursor: not-allowed;      /* Show "not allowed" cursor */
+        opacity: 0.6;             /* Make the checkbox appear greyed out */
+      }
+      .ModifierDisabled{
+        background-color: #28574E;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        border: 0;
+        font-size: large;
+        margin-top: 10px;
+        opacity: 0;
+    }
+
+      .button-modifier{
+        margin-top: 200px;
+        background-color: #28574E;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        border: 0;
+        font-size: large;
+        margin-top: 10px;
+        display: block;
+    }
+
+    
+
+        .submitDisabled{
+            background-color: #28574E;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            border: 0;
+            font-size: large;
+            margin-top: 10px;
+            cursor: not-allowed;
+            opacity: 0;
+        }

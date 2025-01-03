@@ -1,0 +1,29 @@
+
+
+ .consultaion-box {
+ width: 100%;
+}
+
+ .date{
+    border:none;
+    padding: 20px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #28574E;
+    color: #E8E7E3;
+    border-radius: 45px 45px 45px 45px;
+    margin: 0;
+ }
+
+ p{
+   font-size: 20px;
+   font-weight: bold;
+ }
+
+ .date:hover {
+    transform: translateY(-2px); /* Subtle lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  
+

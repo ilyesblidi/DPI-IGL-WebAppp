@@ -1,0 +1,102 @@
+<div class="dashboard">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li (click)="showNotifications()">
+        <i class="fas fa-bell"></i>
+        <span>Notifications</span>
+      </li>
+      <li (click)="GoToAdminProfil()">
+        <i class="fas fa-user"></i>
+        <span>Go to Profile</span>
+      </li>
+      <li (click)="viewNews()">
+        <i class="fas fa-newspaper"></i>
+        <span>News</span>
+      </li>
+      <li (click)="openSettings()">
+        <i class="fas fa-cog"></i>
+        <span>Settings</span>
+      </li>
+      <li (click)="GoToListDPI()">
+        <i class="fas fa-folder"></i>
+        <span>DPI List</span>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Header with Profile -->
+  <header class="dashboard-header">
+    <div class="profile-info">
+      <img src="assets/profilepicture.png" alt="Profile Picture" class="profile-pic"/>
+      <div>
+        <h1>Welcome, Dr. {{ doctorName }}</h1>
+        <p><strong>Specialty:</strong> {{ doctorSpecialty }}</p>
+        <p><strong>Email:</strong> {{ doctorEmail }}</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Sections -->
+  <div class="dashboard-sections">
+    <!-- Today's Appointments -->
+    <section class="section appointments">
+      <h2><i class="fas fa-calendar-alt"></i> Today's Appointments</h2>
+      <table>
+        <thead>
+        <tr>
+          <th>Patient Name</th>
+          <th>Time</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let appointment of appointments">
+          <td>{{ appointment.patientName }}</td>
+          <td>{{ appointment.time }}</td>
+          <td><button (click)="viewDpi(appointment.dpiId)">View DPI</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Recent Consultations -->
+    <div class="section">
+      <h2><i class="fas fa-history"></i> Recent Consultations</h2>
+      <div class="cards-container">
+        <div class="card" (click)="openConsultation(1)">
+          <h3>John Doe</h3>
+          <p>Last visit: Dec 25, 2024</p>
+        </div>
+        <div class="card" (click)="openConsultation(2)">
+          <h3>Jane Smith</h3>
+          <p>Last visit: Dec 20, 2024</p>
+        </div>
+        <div class="card" (click)="openConsultation(3)">
+          <h3>Mike Johnson</h3>
+          <p>Last visit: Dec 15, 2024</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resources -->
+    <div class="section">
+      <h2><i class="fas fa-book"></i> Resources</h2>
+      <div class="cards-container">
+        <div class="card" (click)="openResource(1)">
+          <h3>Clinical Guidelines</h3>
+          <p>Updated: Dec 24, 2024</p>
+        </div>
+        <div class="card" (click)="openResource(2)">
+          <h3>Lab Test Handbook</h3>
+          <p>Updated: Dec 22, 2024</p>
+        </div>
+        <div class="card" (click)="openResource(3)">
+          <h3>Pharmacy Policies</h3>
+          <p>Updated: Dec 18, 2024</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

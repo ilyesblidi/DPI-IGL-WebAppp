@@ -1,0 +1,56 @@
+
+    
+
+<div class="likebody">
+<h1> Consultaion  N: {{consultationForm.get('consultationID')?.value}}</h1>
+<form [formGroup]="consultationForm" (ngSubmit)="onSubmit()" class="consultaionform"> 
+    <div class="Separation" class="quarter">
+        <label for="consultatoinMedecin"><p class="medecinName">Medecin :</p></label>
+        <input id="consultatoinMedecin" formControlName="consultatoinMedecin" type="text" [readOnly]="isReadOnly">
+    </div>
+
+<div class="Separation">
+    <label for="consultatoinDate">  <p class="medecinName">Date Consultation:</p></label>
+    <input id="consultatoinDate" formControlName="consultatoinDate" type="date" [readOnly]="isReadOnly">
+</div>
+<div    class="Separation">
+    <label for="consultationTime"><p class="medecinName">Heure de Consultaion</p></label>
+    <input id="consultationTime" formControlName="consultationTime" type="time" [readOnly]="isReadOnly" >
+</div>
+
+<div class="Separation">
+    <label for="consultationAntecedents"><h2 class="title">Consultation Antecedents:</h2></label>
+    <textarea class="input-text" id="consultationAntecedents" formControlName="consultationAntecedents" [readOnly]="isReadOnly" ></textarea>
+</div>
+<div class="Separation">
+    <label for="cnosultaionResumer"><h2 class="title">Consultation Resumer:</h2></label>
+    <textarea class="input-text" id="cnosultaionResumer" formControlName="cnosultaionResumer" [readOnly]="isReadOnly"></textarea>
+</div>
+<div class="Separation">
+    <label for="consultaionTestSupplementaires"><h2 class="title">Test Supplementaires:</h2></label>
+    <div id="consultaionTestSupplementaires">
+
+        <div class="checkbox-div"></div>
+            <input type="checkbox" id="bilanRadiologique" formControlName="BilanRadiologique" [disabled]="isDisabled" [class.disabled]="isDisabled" >
+            <label for="bilanRadiologique"><p class="checkbox-label" >Bilan Radiologique</p></label>
+        </div>
+        <div class="checkbox-div">
+            <input type="checkbox" id="bilanBiologique" formControlName="BilanBiologique" [disabled]="isDisabled" [class.disabled]="isDisabled" >
+            <label for="bilanBiologique"><p class="checkbox-label" >Bilan Biologique</p></label>
+        </div>
+        
+</div>
+
+<button type="submit"   [class.submitDisabled]="isDisabled" [disabled]="isDisabled">Submit</button>
+
+
+
+
+
+
+</form>
+<button [class.submitDisabled]="isDisabled" [disabled]="isDisabled" (click)="disable()">Annuler</button>
+
+<button class="button-modifier"  [class.ModifierDisabled]="!isDisabled" [disabled]="!isDisabled" (click)="enable()">Modifier</button>
+</div>
+

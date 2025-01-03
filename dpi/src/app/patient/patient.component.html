@@ -1,0 +1,64 @@
+
+<div class="profile">
+    <h2>
+        Welcome, {{ patient.nom }} {{ patient.prenom }}
+    </h2>
+    <ul>
+      <li><strong>Numéro Sécurité Sociale:</strong> {{ patient.numero_securite_sociale }}</li>
+      <li><strong>Nom:</strong> {{ patient.nom }}</li>
+      <li><strong>Prénom:</strong> {{ patient.prenom }}</li>
+      <li><strong>Date de Naissance:</strong> {{ patient.date_naissance}}</li>
+      <li><strong>Adresse:</strong> {{ patient.adresse }}</li>
+      <li><strong>Téléphone:</strong> {{ patient.telephone }}</li>
+      <li><strong>Mutuelle:</strong> {{ patient.mutuelle }}</li>
+      <li><strong>Médecin Traitant:</strong> {{ patient.medecin_traitant }}</li>
+      <li><strong>Téléphone de Contact:</strong> {{ patient.personne_contact_telephone }}</li>
+    </ul>
+  </div>
+  
+  <div *ngIf="view === 'actions'" class="actions">
+    <div class="action" (click)="showDetails('consultations')">Consultations<br><span class="stat">{{stat.consultations}}</span></div>
+    <div class="action" (click)="showDetails('diagnostiques')">Diagnostiques<br><span class="stat">{{stat.diagnostiques}}</span></div>
+    <div class="action" (click)="showDetails('bilansBiologique')">Bilans Biologique<br><span class="stat">{{stat.bilansBiologique}}</span></div>
+    <div class="action" (click)="showDetails('bilansRadio')">Bilans Radio<br><span class="stat">{{stat.bilansRadio}}</span></div>
+    <div class="action" (click)="showDetails('soins')">Soins<br><span class="stat">{{stat.soins}}</span></div>
+  </div>
+  
+  <div *ngIf="view !== 'actions'" class="details">
+    <button class="back-button" (click)="showActions()">X</button>
+    <table *ngIf="view === 'consultations'">
+      <tr><th>Consultations</th><th>Action</th></tr>
+      <tr *ngFor="let item of consultations">
+        <td>{{ item.title }}</td>
+        <td><button class="view" (click)="viewDetails(item)">View</button></td>
+      </tr>
+    </table>
+    <table *ngIf="view === 'diagnostiques'">
+      <tr><th>Diagnostiques</th><th>Action</th></tr>
+      <tr *ngFor="let item of diagnostiques">
+        <td>{{ item.title }}</td>
+        <td><button class="view"  (click)="viewDetails(item)">View</button></td>
+      </tr>
+    </table>
+    <table *ngIf="view === 'bilansBiologique'">
+      <tr><th>Bilans Biologique</th><th>Action</th></tr>
+      <tr *ngFor="let item of bilansBiologique">
+        <td>{{ item.title }}</td>
+        <td><button  class="view" (click)="viewDetails(item)">View</button></td>
+      </tr>
+    </table>
+    <table *ngIf="view === 'bilansRadio'">
+      <tr><th>Bilans Radio</th><th>Action</th></tr>
+      <tr *ngFor="let item of bilansRadio">
+        <td>{{ item.title }}</td>
+        <td><button  class="view" (click)="viewDetails(item)">View</button></td>
+      </tr>
+    </table>
+    <table *ngIf="view === 'soins'">
+      <tr><th>Soins</th><th>Action</th></tr>
+      <tr *ngFor="let item of soins">
+        <td>{{ item.title }}</td>
+        <td><button class="view" (click)="viewDetails(item)">View</button></td>
+      </tr>
+    </table>
+  </div>

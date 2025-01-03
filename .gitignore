@@ -1,0 +1,5 @@
+Backend/db.sqlite3
+Backend/app/migrations/
+Backend/TP_IGL/__pycache__/
+Backend/app/__pycache__/
+Backend/app/models/__pycache__/
