@@ -1,0 +1,31 @@
+<div class="profile-container">
+  <div class="profile-header">
+    <img [src]="admin.avatar" alt="Admin Avatar" class="avatar" />
+    <h2>{{ admin.name }}</h2>
+    <p>{{ admin.role }}</p>
+  </div>
+
+  <div class="profile-picture-upload">
+    <label for="file-upload" class="upload-label">
+      Change Profile Picture
+    </label>
+    <input
+      type="file"
+      id="file-upload"
+      class="file-input"
+      (change)="onFileSelected($event)"
+      accept="image/*"
+    />
+  </div>
+
+  <div class="profile-details">
+    <h3>Contact Information</h3>
+    <p><strong>Email:</strong> {{ admin.email }}</p>
+    <p><strong>Phone:</strong> {{ admin.phone }}</p>
+
+    <h3>Other Details</h3>
+    <p><strong>Joined:</strong> {{ admin.joinedDate }}</p>
+  </div>
+
+  <button class="edit-button" (click)="editProfile()">Edit Profile</button>
+</div>

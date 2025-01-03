@@ -1,0 +1,101 @@
+<div class="container">
+  <!-- Header Section -->
+  <div class="header">
+    <button class="back-button" (click)="GoToDashBoard()" >
+      <i class="fa fa-arrow-left" ></i>
+    </button>
+  </div>
+
+  <!-- DPI List Section -->
+  <div class="dpi-list-container">
+    <h1 class="title" >Liste des DPIs</h1>
+
+    <!-- Search and Action Buttons -->
+    <div class="button-row">
+
+      <!-- Search Bar -->
+      <div class="search-bar-container">
+        <button class="search-icon" (click)="toggleSearchBar()">
+          <i class="fa fa-search"></i>
+        </button>
+        <input
+          type="text"
+          [(ngModel)]="nssInput"
+          class="search-input hidden"
+          maxlength="9"
+          (input)="validateNSS($event)"
+          (keyup.enter)="searchByNSS(nssInput)"
+        />
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button class="icon-button" (click)="searchByQRCode()">
+          <i class="fa fa-qrcode"></i>
+        </button>
+        <button class="icon-button">
+          <i class="fa fa-refresh"></i>
+        </button>
+        <button class="icon-button" (click)="createNewDpi()">
+          <i class="fa fa-plus"></i>
+        </button>
+      </div>
+    </div>
+
+
+    <!-- Table Section -->
+    <div class="table-container">
+      <table>
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+<!--          <th>Âge</th>-->
+          <th>NSS</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let dpi of dpis" (click)="viewDpiDetails(dpi.id_dpi)" class="dpi-row">
+          <td>{{ dpi.id_dpi }}</td>
+          <td>{{ dpi.patient?.nom }}</td>
+          <td>{{ dpi.patient?.prenom }}</td>
+<!--          <td>{{ dpi.patient?.age || 'N/A' }}</td>-->
+          <td>{{ dpi.patient?.NSS }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal for Search by NSS -->
+  <div class="modal-overlay" *ngIf="showModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Détails du DPI</h3>
+        <button class="btn-close" (click)="closeModal()">×</button>
+      </div>
+      <div *ngIf="selectedDpi; else noResult">
+        <div class="modal-body">
+          <div class="modal-left">
+            <p><strong>ID:</strong> {{ selectedDpi.id_dpi }}</p>
+            <p><strong>Date de création:</strong> {{ selectedDpi.date_creation }}</p>
+            <p><strong>NSS:</strong> {{ selectedDpi.patient?.NSS }}</p>
+            <p><strong>Nom du patient:</strong> {{ selectedDpi.patient?.nom }} {{ selectedDpi.patient?.prenom }}</p>
+            <p><strong>Commentaire admin:</strong> {{ selectedDpi.commentaire_administratif }}</p>
+          </div>
+          <div class="modal-right">
+            <img
+              class="dpi-qr-code"
+              [src]="selectedDpi.chemin_QR_code"
+              alt="QR Code du DPI {{ selectedDpi.id_dpi }}"
+            />
+          </div>
+        </div>
+      </div>
+      <ng-template #noResult>
+        <p>Aucun DPI trouvé avec le NSS fourni.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

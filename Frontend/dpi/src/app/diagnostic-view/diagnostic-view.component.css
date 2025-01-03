@@ -1,0 +1,142 @@
+ .consultaion-box-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr; /* One column that spans the full width */
+  row-gap: 10px; /* Space between rows */
+  max-height: 350px; /* Adjust the height of the scrollable container */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 0 solid #000000;
+  padding: 10px;
+  background-color: #E8E7E3;
+  border-radius: 15px 15px 15px 15px;
+
+ }
+
+ 
+
+h3 {
+    text-align: center;
+    font-size: 30px; /* Adjust size as needed */
+    font-weight: bold; /* Make it bold */
+    color: #E8E7E3; /* Deep green color */
+    text-transform: uppercase; /* Ensures all text is uppercase */
+    letter-spacing: 2px; /* Adds spacing between letters */
+    text-align: center; /* Optional: Centers the text */
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 35px; /* Adjust size as needed */
+    font-weight: bold; /* Make it bold */
+    color: #28574E; /* Deep green color */
+    text-transform: uppercase; /* Ensures all text is uppercase */
+    letter-spacing: 2px; /* Adds spacing between letters */
+    text-align: left; /* Optional: Centers the text */
+    margin-left: 40px;
+    margin-bottom: 20px;    
+}
+
+
+    p{
+        margin: 0;
+        padding: 0px;
+        padding-bottom: 10px;
+        font-family: 'Verdana', sans-serif; font-size: 25px; font-weight: bold;
+        padding-left: 15px;
+
+        
+    }
+
+
+    .nom{
+        padding-top: 10px;
+    }
+    .personalData{
+        width: 500px;
+        margin-right: 350px;
+        margin-top: 140px;
+        margin-left: 50px;
+        background-color: #28574E ;
+        border-radius: 40px 40px 40px 40px;
+        padding: 30px;
+        padding-bottom: 0;
+        padding-top: 0;
+        color: #E8E7E3;
+        margin: 100px;
+ 
+        
+    }
+
+    .like-body{
+        height: 150%;
+        margin-left: 15%;
+        margin-right: 15%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 15px;
+        background-color: #E8E7E3;
+        margin-bottom: 20px;
+        padding-bottom: 100px;
+       
+        
+        border-radius: 40px 40px 40px 40px;
+
+        }
+
+
+    .non-header{
+        display: flex;
+        flex-direction: row;
+
+    }    
+    .non-header > * {
+        flex: 1; /* Each child element will take up 50% of the container */
+        margin: 20px; /* Optional: Add some space between the elements */
+        }
+
+    :host {
+        width: 100%;
+        height: 100%;
+        padding-bottom: 500px;
+        padding-top: 150px;
+        background-color: #28574E;
+        display: block; /* Ensure the component occupies a block-level element */
+      } 
+
+
+      
+
+      .container{
+        max-width: 500px;
+      }
+
+
+      .consultation{
+        text-align: center;
+        font-family: 'Georgia', 'Times New Roman', serif; /* Elegant serif fonts */
+        font-size: 30px; /* Adjust size as needed */
+        font-weight: bold; /* Make it bold */
+        color: #2E4C3B; /* Deep green color */
+        text-transform: uppercase; /* Ensures all text is uppercase */
+        letter-spacing: 2px; /* Adds spacing between letters */
+        text-align: center; /* Optional: Centers the text */
+        margin-bottom: 10px;
+        margin-top: 10px;
+     
+      }
+
+      .nouvelleConsultation{
+        text-align: center;
+        font-family: 'Georgia', 'Times New Roman', serif; /* Elegant serif fonts */
+        font-size: 23px; /* Adjust size as needed */
+        font-weight: bold; /* Make it bold */
+        color: #2E4C3B; /* Deep green color */
+        text-transform: uppercase; /* Ensures all text is uppercase */
+        letter-spacing: 2px; /* Adds spacing between letters */
+        text-align: center; /* Optional: Centers the text */
+        margin-bottom: 10px;
+        margin-top: 10px;
+        float: right;
+      }
+      

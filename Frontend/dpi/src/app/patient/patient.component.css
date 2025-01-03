@@ -1,0 +1,313 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0fff4; /* Light green background */
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.action {
+  background-color: #28a745; /* Main green color */
+  color: white;
+  padding: 30px 30px; /* Larger size */
+  text-align: center;
+  border-radius: 20px; /* Smooth, rounded corners */
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.6s ease, box-shadow 0.6s ease, background-color 0.4s ease;
+  flex: 1 1 300px; /* Base size for rectangles */
+  max-width: 350px;
+  min-height: 100px; /* Tall rectangles */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  font-size: 1.2rem;
+  overflow: hidden;
+}
+
+.action .stat {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  color: #28a745; /* Green for the number */
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.action:hover .stat {
+  transform: scale(1.2); /* Slight bounce effect */
+}
+
+.action::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-45deg);
+  transition: left 0.6s ease;
+}
+
+.action:hover::before {
+  left: 100%;
+}
+
+.action:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 900px) {
+  .actions {
+    justify-content: space-evenly;
+  }
+  .action {
+    flex: 1 1 80%; /* Expand to fit */
+  }
+}
+
+@media (max-width: 600px) {
+  .action {
+    flex: 1 1 100%;
+  }
+}
+.profile ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.profile li {
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f1f1f1;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+.profile {
+  background: linear-gradient(145deg, #ffffff, #f0fff4); /* Subtle gradient */
+  border-radius: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.1);
+  margin: 5% auto;
+  padding: 30px 50px;
+  max-width: 750px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 8px 8px rgba(0, 0, 0, 0.15);
+}
+
+.profile h2 {
+  text-align: center;
+  color: #218838; /* Slightly darker green */
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.profile ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile li {
+  margin: 20px 0;
+  padding: 15px 20px;
+  background: rgba(40, 167, 69, 0.1); /* Transparent green background */
+  border-left: 6px solid #218838; /* Green accent line */
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.profile li strong {
+  color: #212529; /* Darker text */
+  font-size: 1.1rem;
+}
+
+.profile li span {
+  color: #6c757d; /* Subtle text for secondary info */
+}
+
+.profile::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 30px;
+  background: linear-gradient(145deg, rgba(40, 167, 69, 0.3), rgba(0, 0, 0, 0));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.profile:hover::before {
+  opacity: 1;
+}
+.details {
+  margin: 20px;
+}
+.back-button {
+  background: linear-gradient(145deg, #ff4b5c, #ff1c2f); /* Gradient from red to dark red */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 25px; /* Rounded corners */
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.back-button:hover {
+  background: linear-gradient(145deg, #ff1c2f, #ff4b5c); /* Reversed gradient on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+  transform: translateY(-4px); /* Slight lift effect */
+}
+
+.back-button:active {
+  background: linear-gradient(145deg, #d12a38, #ff1c2f); /* Darker red on click */
+  transform: translateY(2px); /* Slight depression effect */
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  border: 2px solid #218838; /* Green border around the entire table */
+  border-radius: 15px;
+  overflow: hidden; /* To make sure borders look clean */
+  background: linear-gradient(145deg, #f0fff4, #d1f7d7); /* Subtle gradient background */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Light shadow to add depth */
+}
+
+th, td {
+  padding: 16px 24px; /* Larger padding for a more spacious feel */
+  text-align: left;
+  background: rgba(40, 167, 69, 0.1); /* Transparent green background */
+  border-radius: 12px; /* Rounded corners for cells */
+  font-size: 1.1rem; /* Slightly larger text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease;
+}
+
+th {
+  background: linear-gradient(145deg, #f2f2f2, #e2e2e2); /* Subtle gradient for headers */
+  font-weight: bold;
+  text-align: center;
+  color: #333; /* Darker text for clarity */
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+td {
+  color: #212529; /* Darker text */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+tr:hover th, tr:hover td {
+  transform: scale(1.02);
+  background-color: rgba(11, 239, 64, 0.2); /* Bright green highlight on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for hover effect */
+}
+
+tr:nth-child(even) {
+  background: rgba(7, 235, 129, 0.08); /* Slightly darker alternating rows */
+}
+
+tr:hover {
+  background-color: rgba(11, 239, 64, 0.4); /* Strong green highlight on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slight shadow for row */
+}
+
+/* Hover effect for table cells */
+td:hover {
+  background-color: rgba(40, 167, 69, 0.2); /* Light green hover effect */
+  cursor: pointer;
+  transform: scale(1.02);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover effect for table headers */
+th:hover {
+  background: linear-gradient(145deg, #ddd, #ccc); /* Darker gradient effect */
+  transform: scale(1.05);
+  box-shadow: inset 0 6px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.view {
+  background: linear-gradient(145deg, #28a745, #218838); /* Green gradient background */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px; /* Rounded corners for a sleek look */
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: all 0.3s ease, transform 0.2s ease;
+  outline: none;
+  display: inline-block;
+}
+
+.view:hover {
+  background: linear-gradient(145deg, #218838, #28a745); /* Reverse the gradient on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+  transform: translateY(-4px); /* Slight lift effect on hover */
+}
+
+.view:active {
+  background: linear-gradient(145deg, #1e7e34, #218838); /* Darker green on click */
+  transform: translateY(2px); /* Slight depression effect on click */
+}
+
+.view:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 4px rgba(18, 108, 39, 0.5); /* Green glow around button when focused */
+}
+
+.view:disabled {
+  background: #b3e6b3; /* Light green background when disabled */
+  cursor: not-allowed;
+  box-shadow: none; /* Remove shadow when disabled */
+}
+
+.view span {
+  margin-right: 10px;
+  transition: margin-right 0.2s ease;
+}
+
+.view:hover span {
+  margin-right: 15px; /* Slight movement of text when hovering */
+}

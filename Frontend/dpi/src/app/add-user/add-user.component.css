@@ -1,0 +1,87 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Add spacing between elements */
+  background: linear-gradient(145deg, #ffffff, #f0fff4); /* Light gradient background */
+  border-radius: 20px;
+  padding: 20px 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.05); /* Soft shadow */
+  max-width: 400px;
+  margin: 20px auto;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+form:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.1); /* Enhance shadow on hover */
+}
+
+form div {
+  display: flex;
+  flex-direction: column; /* Stack label and input */
+  gap: 5px;
+}
+
+form label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #218838; /* Green text for labels */
+}
+
+form input, form select {
+  padding: 10px;
+  border: 1px solid rgba(40, 167, 69, 0.3); /* Subtle green border */
+  border-radius: 10px;
+  font-size: 1rem;
+  background: rgba(40, 167, 69, 0.05); /* Transparent green background */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus, form select:focus {
+  border-color: #28a745; /* Bright green border on focus */
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Green glow */
+  outline: none;
+}
+
+form button {
+  align-self: flex-start;
+  padding: 10px 20px;
+  background: linear-gradient(145deg, #28a745, #218838); /* Green gradient */
+  color: white;
+  border: none;
+  border-radius: 25px; /* Rounded corners */
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  background: linear-gradient(145deg, #218838, #28a745); /* Reverse gradient */
+  transform: translateY(-4px); /* Slight lift effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+}
+
+form button:active {
+  background: linear-gradient(145deg, #1e7e34, #218838); /* Darker green on click */
+  transform: translateY(2px); /* Depression effect */
+}
+
+form button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(18, 108, 39, 0.5); /* Focus glow */
+}
+h2 {
+  text-align: center;
+  color: #28a745; /* Green primary color */
+  margin-bottom: 20px;
+  font-size: 2rem; /* Larger font size for emphasis */
+  font-weight: bold;
+  letter-spacing: 1px; /* Slight spacing for a cleaner look */
+  text-transform: uppercase; /* Make the text uppercase for a formal tone */
+  border-bottom: 2px solid #28a745; /* Adds a visual separator */
+  display: inline-block;
+  padding-bottom: 5px;
+}

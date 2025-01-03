@@ -1,0 +1,294 @@
+/* Styling for the main container */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+  animation: fadeInContainer 1s ease-in-out;
+}
+
+/* Animation for the home container */
+@keyframes fadeInContainer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hero section */
+.hero-section {
+  margin-bottom: 50px;
+  animation: slideInUp 1s ease-in-out;
+}
+
+/* Animation for sliding in the hero section */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-top: 30%;
+  margin-bottom: 10px;
+  animation: bounceIn 1s ease-in-out;
+}
+
+/* Bounce animation for the hero heading */
+@keyframes bounceIn {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  animation: fadeInText 1s ease-in-out;
+}
+
+/* Fade-in text animation */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-section button {
+  position: relative;
+  margin-top: 10%;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease, transform 0.2s ease;
+  animation: buttonAnimation 2s ease-in-out infinite alternate;
+}
+
+/* Animation for the hero button */
+@keyframes buttonAnimation {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.hero-section button:hover {
+  background: linear-gradient(135deg, #218838, #1e7e34);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section button:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Sparkling effect */
+.hero-section button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7), transparent 60%);
+  opacity: 0;
+  animation: sparkle 2s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.5);
+    filter: blur(5px);
+  }
+}
+
+/* Not implemented text */
+.not-implemented {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  opacity: 0.8;
+  animation: fadeInText 2s ease-in-out;
+}
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: hsla(168, 37%, 30%, 1);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: navbarSlideIn 1s ease-out;
+}
+
+/* Slide-in animation for the navbar */
+@keyframes navbarSlideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #28a745;
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInNav 1s ease-in-out;
+}
+
+/* Fade-in animation for navbar items */
+@keyframes fadeInNav {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar nav ul li {
+  display: inline;
+  margin-right: 5rem;
+  transition: transform 0.3s ease;
+}
+
+.navbar nav ul li:hover {
+  transform: translateY(-5px);  /* Subtle hover effect */
+}
+
+.navbar nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+/* Hover effect for navbar links */
+.navbar nav ul li a:hover {
+  color: #28a745;
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .navbar nav ul {
+    gap: 20px;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  .hero-section button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .not-implemented {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 10px;
+  }
+
+  .navbar nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 0.9rem;
+  }
+
+  .hero-section button {
+    padding: 8px 18px;
+    font-size: 0.8rem;
+  }
+
+  .not-implemented {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,134 @@
+.like-body {
+  height: auto;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #E8E7E3;
+  border-radius: 20px;
+  width: 80%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.non-header {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.personalData {
+  background-color: #28574E;
+  border-radius: 50px;
+  font-size: 18px;
+  padding: 20px;
+  color: #E8E7E3;
+  width: 40%;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.personalData:hover {
+  transform: scale(1.05);
+}
+
+.personalData h3 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.personalData p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.text-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background-color: #28574E;
+  border-radius: 25px;
+  padding: 10px 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-row:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.text-label {
+  font-size: 18px;
+  color: white;
+  font-family: 'Verdana', sans-serif;
+}
+
+.btn-detail {
+  background-color: #ffffff;
+  color: #28574E;
+  padding: 7px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 100px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-detail:hover {
+  background-color: #FFD580;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #28574E;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

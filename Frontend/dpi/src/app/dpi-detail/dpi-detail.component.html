@@ -1,0 +1,34 @@
+<div class="like-body">
+  <h1>Dossier Patient Informatisé</h1>
+
+  <div class="non-header">
+    <div class="personalData">
+      <h3>Information Patient</h3>
+      <p><strong>Nom:</strong> {{ dpiData?.patient?.nom }}</p>
+      <p><strong>Prénom:</strong> {{ dpiData?.patient?.prenom }}</p>
+      <p><strong>NSS:</strong> {{ dpiData?.patient?.NSS }}</p>
+      <p><strong>Date de création:</strong> {{ dpiData?.date_creation }}</p>
+    </div>
+
+    <div class="container">
+      <div class="text-group">
+        <div class="text-row">
+          <span class="text-label">Diagnostics</span>
+          <button class="btn btn-detail" (click)="GoToDiagnostics()" >Detail</button>
+        </div>
+        <div class="text-row">
+          <span class="text-label">Soins</span>
+          <button class="btn btn-detail" (click)="GoToSoins()" >Detail</button>
+        </div>
+        <div class="text-row">
+          <span class="text-label">Hospitalisations</span>
+          <button class="btn btn-detail" (click)="GoToHospitalisations()" >Detail</button>
+        </div>
+        <div class="text-row">
+          <span class="text-label">Certificats médicaux</span>
+          <button class="btn btn-detail" (click)="GoToCertificats()" >Detail</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
