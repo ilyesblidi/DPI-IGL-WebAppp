@@ -56,6 +56,9 @@ export class AdminProfilComponent implements OnInit {
   editProfile(): void {
     alert('Edit profile functionality coming soon!');
   }
+  createDpi(): void {
+    this.router.navigate(['/create-dpi']);
+  }
 
   // fetchPatientById(id: string) {
   //   this.dataService.getData(`users/${id}/`).subscribe({
