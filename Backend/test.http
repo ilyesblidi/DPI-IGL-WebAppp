@@ -3,7 +3,7 @@ POST http://127.0.0.1:8000/app/login/
 Content-Type: application/json
 
 {
-    "email":"infirmier@gmail.com",
+    "email":"admin@gmail.com",
     "password":"bndbndbnd"
 }
 
@@ -48,18 +48,18 @@ Content-Type: application/json
 ###
 # ---------------- register new user (not dpi) -----
 POST http://127.0.0.1:8000/app/users/add/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1NTU5MDI1LCJpYXQiOjE3MzU1NTU0MjUsImp0aSI6IjBlNDQ2ODZmMDhmMjQyMDRiNzNkYTQ2ZGY0NmI2YmYwIiwidXNlcl9pZCI6MSwicm9sZSI6ImFkbWluIn0.vH0xQZs5bAHlGcROcL-IKVq6aJTk06imT6CjIQ7S1-s
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2MDAyNTExLCJpYXQiOjE3MzU5OTg5MTEsImp0aSI6IjJlNTFlMzc2ZGZhODRjOGY5NTg5NWVmYzI0MmU1NTdkIiwidXNlcl9pZCI6Niwicm9sZSI6ImFkbWluIn0.sVBJ4ArIkld2eJ9yBpbkvDhatJLSacPU02SKBw_06xY
 Content-Type: application/json
 
 {
-    "first_name":"medecin",
-    "last_name":"medecin",
-    "email":"infirmier@gmail.com",
+    "first_name":"Mohamed",
+    "last_name":"Khalil",
+    "email":"admin2@gmail.com",
     "password":"bndbndbnd",
     "password2":"bndbndbnd",
-    "phone":"bnd",
-    "adresse":"bnd",
-    "role":"infirmier"
+    "phone":"0779759059",
+    "adresse":"Ain Trig",
+    "role":"admin"
 }
 
 ###---------------------------------------------------------------------------------------------------
@@ -399,8 +399,8 @@ Content-Type: application/json
 
 ###
 # ---------------- get specific user -------------------
-GET http://127.0.0.1:8000/app/users/28/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1NDc0MzUyLCJpYXQiOjE3MzU0NzA3NTIsImp0aSI6IjVkYWU3YzU0NTZjODQ2M2ZiZDRlNGZiNTcyZTk5ZjYzIiwidXNlcl9pZCI6MTQsInJvbGUiOiJpbmZpcm1pZXIifQ.dgo0U-MoPCen4jkF2FfteIZwEnKhZBT5lhyA9amXUig
+GET http://127.0.0.1:8000/app/users/6/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2MDAyNTExLCJpYXQiOjE3MzU5OTg5MTEsImp0aSI6IjJlNTFlMzc2ZGZhODRjOGY5NTg5NWVmYzI0MmU1NTdkIiwidXNlcl9pZCI6Niwicm9sZSI6ImFkbWluIn0.sVBJ4ArIkld2eJ9yBpbkvDhatJLSacPU02SKBw_06xY
 Content-Type: application/json
 
 ###
