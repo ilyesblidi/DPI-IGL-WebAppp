@@ -73,7 +73,6 @@
 }
 
 .edit-button {
-  display: block;
   width: 100%;
   padding: 10px;
   background-color: #007bff;
@@ -88,4 +87,18 @@
 
 .edit-button:hover {
   background-color: #0056b3;
+}
+
+.add-dpi-button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
 }
