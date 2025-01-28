@@ -83,6 +83,9 @@ export class AddUserComponent {
       console.log('Form Data:', this.addUserForm.value);
       console.log('Form Data:', medecin);
 
+
+      if(this.addUserForm.get('role')?.value === 'medecin'){
+
       this.dataService.addData('users/add', medecin).subscribe({
 
         next: (response: any) => {
@@ -97,5 +100,6 @@ export class AddUserComponent {
     } else {
       console.error('Form is invalid');
     }
+  }
   }
 }
