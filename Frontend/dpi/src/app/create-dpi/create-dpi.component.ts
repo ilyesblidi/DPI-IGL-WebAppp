@@ -122,11 +122,11 @@ export class CreateDpiComponent {
 
 
     // Call service to save DPI
-    this.dataService.addData('dpi/add/', dpitest).subscribe({
+    this.dataService.addData('dpi/add/', newDpi).subscribe({
 
       next: (response: any) => {
         alert('DPI created successfully');
-        this.router.navigate(['/']);
+        this.router.navigate(['/profile']);
       },
       error: (error: any) => {
         console.error(error);
