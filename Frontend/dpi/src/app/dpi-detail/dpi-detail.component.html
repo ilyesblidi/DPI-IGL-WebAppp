@@ -2,12 +2,14 @@
   <h1>Dossier Patient Informatisé</h1>
 
   <div class="non-header">
+    
     <div class="personalData">
+      
       <h3>Information Patient</h3>
-      <p><strong>Nom:</strong> {{ dpiData?.patient?.nom }}</p>
-      <p><strong>Prénom:</strong> {{ dpiData?.patient?.prenom }}</p>
-      <p><strong>NSS:</strong> {{ dpiData?.patient?.NSS }}</p>
-      <p><strong>Date de création:</strong> {{ dpiData?.date_creation }}</p>
+      <p><strong>Nom:</strong> {{ user.name}}</p>
+      <p><strong>Prénom:</strong> {{ user.surname }}</p>
+      <p><strong>NSS:</strong>  {{ user.nss}}</p>
+      <p><strong>Date de création:</strong> {{ user.creationDate }}</p>
     </div>
 
     <div class="container">
@@ -27,8 +29,11 @@
         <div class="text-row">
           <span class="text-label">Certificats médicaux</span>
           <button class="btn btn-detail" (click)="GoToCertificats()" >Detail</button>
+
+         
         </div>
       </div>
     </div>
   </div>
 </div>
+

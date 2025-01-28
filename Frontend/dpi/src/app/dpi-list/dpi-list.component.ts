@@ -126,6 +126,20 @@ export class DpiListComponent implements OnInit {
     this.router.navigate(['/create-dpi']);
   }
 
+  // Fetch DPIs from MockAPI
+  fetchDpis(): void {
+    const apiUrl = 'https://676bfd0dbc36a202bb865e74.mockapi.io/api/dpi-list/DPI'; // Replace with your API URL
+    this.http.get<DPI[]>(apiUrl).subscribe({
+      next: (data) => {
+        this.dpis = data;
+        //console.log('Fetched DPIs:', this.dpis);
+      },
+      error: (err) => {
+        console.error('Error fetching DPIs:', err);
+      }
+    });
+  }
+
   GoToDashBoard() {
     this.router.navigate(['/dashboard']);
   }
