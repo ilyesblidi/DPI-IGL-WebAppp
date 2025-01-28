@@ -85,10 +85,23 @@ WSGI_APPLICATION = 'TP_IGL.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dpi_db',
+        'USER': 'django_user',
+        'PASSWORD': 'bndbndbnd',
+        'HOST': 'localhost',  # Set to your database host (default is localhost)
+        'PORT': '3306',       # Default MySQL port
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
 
@@ -151,8 +164,8 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=365),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=365), 
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=365),  # Token expires in 5 minutes
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=365),    # Refresh token expires in 1 day
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
 }

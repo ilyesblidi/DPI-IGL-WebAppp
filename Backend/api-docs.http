@@ -3,7 +3,7 @@ POST http://127.0.0.1:8000/app/login/
 Content-Type: application/json
 
 {
-    "email":"admin@gmail.com",
+    "email":"pharmacien2@gmail.com",
     "password":"bndbndbnd"
 }
 
@@ -424,7 +424,7 @@ Content-Type: application/json
 ###
 # -------------------- validate ordonnance -----------------
 POST http://127.0.0.1:8000/app/ordonnance/validate/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY5NjE5MjQyLCJpYXQiOjE3MzgwODMyNDIsImp0aSI6ImNjYmMwNmU5MDJlNDQ2NmQ5ZGFjMjllYzEyMWRiOGQzIiwidXNlcl9pZCI6MSwicm9sZSI6ImFkbWluIn0.Ktq-blHi4-ddlI-O312FxMHVAkPJbK-gpbnLO3NgrwU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY5NjIyNzg4LCJpYXQiOjE3MzgwODY3ODgsImp0aSI6IjIxODhjMjViYzc3YTQ5ZmI4MjM2M2Y5M2FkYjBmYmQzIiwidXNlcl9pZCI6NSwicm9sZSI6InBoYXJtYWNpZW4ifQ.IGuc3i82LThdozLj8qd-uPAZWabPk6Cf48sEi_LeGHg
 Content-Type: application/json
 
 {
