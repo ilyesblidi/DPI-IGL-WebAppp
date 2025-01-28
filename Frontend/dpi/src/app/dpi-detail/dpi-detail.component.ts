@@ -46,7 +46,7 @@ export class DpiDetailComponent implements OnInit {
         this.user.name = dpiData?.user?.first_name;
         this.user.surname = dpiData?.user?.last_name;
         this.user.email = dpiData?.user?.email;
-        this.user.nss = dpiData?.nss;
+        this.user.nss = dpiData?.nss; 
       },
       error: (err) => {
         alert("user does not exist ")

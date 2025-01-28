@@ -35,7 +35,7 @@ export class LoginComponent {
         const userType = decodedToken.role 
         const userId = decodedToken.user_id
         if (userType === 'admin') {
-          this.router.navigate(['/profile', userId]);
+          this.router.navigate(['dashboard', userId]);
         } else if (userType === 'patient') {
           this.router.navigate(['/patient', userId]);
         } else if (userType === 'medecin') {
