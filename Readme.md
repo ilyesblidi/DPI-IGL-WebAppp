@@ -1,4 +1,4 @@
-### Backend (Django)
+#### Backend (Django)
 1. **Install Dependencies**
    ```sh
    pip install -r Backend/requirements.txt
@@ -14,7 +14,7 @@
    python Backend/manage.py runserver
    ```
 
-### Frontend (Angular)
+#### Frontend (Angular)
 1. **Navigate to the Frontend Directory**
    ```sh
    cd Frontend/dpi
@@ -33,14 +33,18 @@
 4. **Access the Application**
    Open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Api Documentation 
-**Navigate to the documentation file **
+#### API Documentation
+**Navigate to the documentation file**
    ```sh
    cd Backend/test.http
    ```
-you will see examples of how to interact with the api endpoints 
+You will see examples of how to interact with the API endpoints.
 
-## Database setup
+#### Database Setup
+1. **Create the Database**
+   Import the `db.sql` file located in the `Backend` folder into your database management system (e.g., MySQL Workbench):
+   ```sh
+   mysql -u your_username -p your_database_name < Backend/db.sql
+   ```
 
-
-   
+This will create all the necessary tables and relationships for the application.
