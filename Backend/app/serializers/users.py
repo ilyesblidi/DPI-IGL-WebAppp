@@ -62,6 +62,8 @@ class RegisterSerializer(serializers.ModelSerializer):
             Radiologue.objects.create(user=user)
         elif role == "laborantin":
             Laboratoire.objects.create(user=user)
+        elif role == "pharmacien":
+            Pharmacien.objects.create(user=user)
         elif role == "admin":
             admin.objects.create(user=user)
 
