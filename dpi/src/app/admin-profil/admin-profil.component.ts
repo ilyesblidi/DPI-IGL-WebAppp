@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DataService } from '../data.service';
@@ -27,7 +27,7 @@ export class AdminProfilComponent implements OnInit {
     // Capture the userId from the route parameters
     this.route.paramMap.subscribe(params => {
       this.userId = params.get('id');
-      
+
       if (this.userId) {
         // Fetch the user's profile data using the userId
         this.dataService.getData(`users/${this.userId}/`).subscribe({
@@ -53,6 +53,7 @@ export class AdminProfilComponent implements OnInit {
       reader.readAsDataURL(file);
     }
   }
+
   editProfile(): void {
     alert('Edit profile functionality coming soon!');
   }
