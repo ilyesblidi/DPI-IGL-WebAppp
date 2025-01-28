@@ -1,3 +1,12 @@
+#### Database Setup
+1. **Create the Database**
+   Import the `db.sql` file located in the `Backend` folder into your database management system (e.g., MySQL Workbench):
+   ```sh
+   mysql -u your_username -p your_database_name < Backend/db.sql
+   ```
+
+This will create all the necessary tables and relationships for the application.
+
 #### Backend (Django)
 1. **Install Dependencies**
    ```sh
@@ -40,11 +49,3 @@
    ```
 You will see examples of how to interact with the API endpoints.
 
-#### Database Setup
-1. **Create the Database**
-   Import the `db.sql` file located in the `Backend` folder into your database management system (e.g., MySQL Workbench):
-   ```sh
-   mysql -u your_username -p your_database_name < Backend/db.sql
-   ```
-
-This will create all the necessary tables and relationships for the application.
