@@ -1,0 +1,12 @@
+// Call service to save DPI
+    this.dataService.addData('users/add', medecin).subscribe({
+
+      next: (response: any) => {
+        alert('DPI created successfully');
+        this.router.navigate(['/']);
+      },
+      error: (error: any) => {
+        console.error(error);
+        alert('Failed to create DPI');
+      }
+    });
