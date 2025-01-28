@@ -12,6 +12,7 @@ from app.views import DiagnosticControler, ConsultationControler, OrdananceContr
 from app.views.users import *
 from app.views.dpi import *
 from app.views.soins import *
+from app.views.pharmacien import *
 
 urlpatterns = [
     path('POST/', authentication.index_POST, name='index_POST'),
@@ -88,4 +89,5 @@ urlpatterns = [
     path('dpi/<int:pk>/', GetDPIView.as_view(), name="get_dpi"),
     path('soins/<int:pk>/', GetSoinView.as_view(), name="get_soin"),
     path('dpi/search/', SearchDPIView.as_view(), name="search_dpi"),
+    path('ordonnance/validate/', OrdonnanceValidationView.as_view(), name="validate_ord"),
 ]

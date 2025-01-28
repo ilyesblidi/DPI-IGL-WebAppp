@@ -23,3 +23,7 @@ class isRadioloque(BasePermission):
 class isLaborantin(BasePermission):
     def has_permission(self, request, view):
         return request.user.is_authenticated and request.user.role == 'laborantin'
+
+class isPharmacien(BasePermission):
+    def has_permission(self, request, view):
+        return request.user.is_authenticated and request.user.role == 'pharmacien'
