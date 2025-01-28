@@ -16,8 +16,9 @@ export const routes: Routes = [
     { path: 'diagnostics', loadComponent:()=> import('./diagnostic-view/diagnostic-view.component').then(m => m.DiagnosticViewComponent) },
     { path: 'nouvelle-consultation', loadComponent:()=> import('./nouvelle-consultation/nouvelle-consultation.component').then(m => m.NouvelleConsultationComponent) },
     { path: 'new-consultation', loadComponent:()=> import('./Consultaiton-view/consultation-view.component').then(m => m.ConsultationViewComponent) },
-    // {path: 'laborantin/:id', loadComponent: () => import('./laborantin/laborantin.component').then(m => m.LaborantinComponent) },
-    // {path: 'radiologue/:id', loadComponent: () => import('./radiologue/radiologue.component').then(m => m.RadiologueComponent) },
+    {path: 'laborantin', loadComponent: () => import('./laborantin-profile/laborantin-profile.component').then(m => m.LaborantinProfileComponent) },
+    {path: 'radiologue', loadComponent: () => import('./radiologue-profile/radiologue-profile.component').then(m => m.RadiologueProfileComponent) },
+    {path: 'doctor', loadComponent: () => import('./doctor-profile/doctor-profile.component').then(m => m.DoctorProfileComponent) },
     { path: '', redirectTo: '/home', pathMatch: 'full' }
   ];
 
