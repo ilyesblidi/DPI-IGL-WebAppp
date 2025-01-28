@@ -43,11 +43,10 @@ export class DpiDetailComponent implements OnInit {
       next: (dpiData) => {
         console.log(dpiData); // Handle the response
         console.log(dpiData?.user?.first_name);
-        this.cdr.detectChanges();
         this.user.name = dpiData?.user?.first_name;
         this.user.surname = dpiData?.user?.last_name;
         this.user.email = dpiData?.user?.email;
-        this.user.nss = dpiData?.nss;
+        this.user.nss = dpiData?.nss; 
       },
       error: (err) => {
         alert("user does not exist ")
@@ -60,7 +59,7 @@ export class DpiDetailComponent implements OnInit {
   
 
   GoToDiagnostics() {
-    this.router.navigate(['/diagnostics']);
+    this.router.navigate([`/dpi-detail/${this.dpiId}/diagnostic-list`]);
   }
 
   GoToSoins() {

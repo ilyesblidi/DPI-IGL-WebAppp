@@ -5,7 +5,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-diagnostic-view',
-  imports: [ConsulationBoxComponent , RouterLink],
+  imports: [ConsulationBoxComponent , RouterLink ],
   templateUrl: './diagnostic-view.component.html',
   styleUrl: './diagnostic-view.component.css'
 })

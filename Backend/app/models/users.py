@@ -43,6 +43,7 @@ class Utilisateur(AbstractUser):
         ("infirmier", "Infirmier"),
         ("radiologue", "Radiologue"),
         ("laborantin", "Laborantin"),
+        ("pharmacien", "Pharmacien"),
     )
     role = models.CharField(max_length=15, choices=ROLE_CHOICES, default="admin")
     USERNAME_FIELD = 'email' # authenticate using email instead of username
@@ -81,3 +82,6 @@ class Radiologue(models.Model):
 
 class admin(models.Model):   
     user = models.OneToOneField(Utilisateur, on_delete=models.CASCADE, primary_key=True, related_name="admin_profile")
+
+class Pharmacien(models.Model):
+    user = models.OneToOneField(Utilisateur, on_delete=models.SET_NULL, null=True, related_name="pharmacien_profile")
