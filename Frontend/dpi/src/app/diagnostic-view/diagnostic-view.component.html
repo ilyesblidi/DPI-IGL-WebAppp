@@ -1,6 +1,6 @@
 <div class="like-body">
 
-    <h1>Diagnostique</h1>
+    <h1>Diagnostique</h1>   
 
     <div class="non-header">
     <div class="personalData">
@@ -48,12 +48,12 @@
     @for (consultation of consultations; track consultation.id) {
      <app-consulation-box [date]="consultation.date"></app-consulation-box>
     }
-
+ 
  </div>
 </div>
 </div>
 
-<button (click)="nouvelleConsultation()" class="nouvelleConsultation">Nouvelle consultation</button>
-
-
+<button routerLink="nouvelleConsultation" class="nouvelleConsultation">Nouvelle consultation</button>
+ 
+ 
 </div>
