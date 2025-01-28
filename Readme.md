@@ -1,26 +1,35 @@
-#### Database Setup
-1. **Create the Database**
-   Import the `db.sql` file located in the `Backend` folder into your database management system (e.g., MySQL Workbench):
-   ```sh
-   mysql -u your_username -p your_database_name < Backend/db.sql
-   ```
+## Creation of a Web Application for DPI Management
 
-This will create all the necessary tables and relationships for the application.
+### Overview
+DPI stands for "Dossier Patient Informatisé." It is a digital file that centralizes all the information related to a patient, such as: medical history, treatments, exam results, and medical prescriptions. The DPI facilitates care management, improves communication between healthcare professionals, and enables better continuity of care.
+
+### Setup
+#### Database Setup
+   Create a MySQL instance, then set the `database name`, `user`, `password`, and `port` in [settings.py](Backend/TP_IGL/settings.py)
 
 #### Backend (Django)
 1. **Install Dependencies**
    ```sh
    pip install -r Backend/requirements.txt
    ```
-
-2. **Apply Migrations**
+2. **Make Migrations**
    ```sh
-   python Backend/manage.py migrate
+   cd Backend && python manage.py makemigrations
    ```
 
-3. **Run the Django Development Server**
+3. **Apply Migrations**
+   ```sh
+   python manage.py migrate
+   ```
+
+4. **Run the Django Development Server**
    ```sh
    python Backend/manage.py runserver
+   ```
+
+5. **Create Admin User**
+   ```sh
+   python manage.py createsuperuser --first_name <FIRST_NAME> --last_name <LAST_NAME> --email <EMAIL>
    ```
 
 #### Frontend (Angular)
@@ -40,12 +49,11 @@ This will create all the necessary tables and relationships for the application.
    ```
 
 4. **Access the Application**
-   Open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+   Open your browser and navigate to `http://localhost:4200/`.  
 
-#### API Documentation
-**Navigate to the documentation file**
-   ```sh
-   cd Backend/test.http
-   ```
+### API Documentation
+[API Documentation](Backend/api-docs.http)
 You will see examples of how to interact with the API endpoints.
 
+### Tests
+Some functionalities have been tested using **pytest** and **selenium**, in [tests](Backend/app/tests/)
