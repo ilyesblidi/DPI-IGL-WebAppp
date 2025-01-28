@@ -1,0 +1,12 @@
+{
+    "source": {
+      "include": ["dpi"],
+      "includePattern": ".js$",
+      "excludePattern": "(node_modules/|docs)"
+    },
+    "opts": {
+      "destination": "./docs/jsdoc",
+      "recurse": true,
+      "template": "templates/default"
+    }
+  }
