@@ -44,7 +44,7 @@ export class CreateDpiComponent {
   };
 
   commentaire_administratif: string = '';
-  chemin_QR_code: string = '/assets/qrcodes/default.png';
+  chemin_QR_code: string = '/assets/qrcodes/default.';
   dpis: DPI[] = [];
 
   constructor(private router: Router, private dpiService: DpiService) {}
