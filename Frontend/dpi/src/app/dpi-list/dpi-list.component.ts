@@ -6,19 +6,19 @@ import { FormsModule } from '@angular/forms';
 import { DpiService } from '../dpi.service';
 import {DataService} from '../data.service'; // Import DPI service
 
-interface Patient {
-  NSS: string;
-  nom: string;
-  prenom: string;
-}
-
-interface DPI {
-  id_dpi: string;
-  date_creation: string;
-  commentaire_administratif: string;
-  chemin_QR_code: string;
-  patient?: Patient;
-}
+// interface Patient {
+//   NSS: string;
+//   nom: string;
+//   prenom: string;
+// }
+//
+// interface DPI {
+//   id_dpi: string;
+//   date_creation: string;
+//   commentaire_administratif: string;
+//   chemin_QR_code: string;
+//   patient?: Patient;
+// }
 
 @Component({
   selector: 'app-dpi-list',
@@ -43,16 +43,54 @@ export class DpiListComponent implements OnInit {
   constructor(private router: Router, private dataService : DataService) { }
 
   ngOnInit(): void {
+    this.fetchDpis();
+    this.addExampleDpi();
+  }
+
+  fetchDpis(): void {
     this.dataService.getData('dpi/').subscribe({
       next: (data) => {
-        this.dpis = data; // Store the user's profile data
+        this.dpis = data; // Store the DPI data
         console.log(this.dpis);
+        alert('FETCHED SUCCESSFULLY');
       },
       error: (error) => {
-        console.error('Error fetching profile:', error);
+        console.error('Error fetching DPIs:', error);
         // Handle error (e.g., show an error message)
       }
     });
+  }
+
+  addExampleDpi(): void {
+    const exampleDpi = {
+      first_name: 'patient',
+      last_name: 'patient',
+      email: 'ilyes@gmail.com',
+      password: 'bndbndbnd',
+      password2: 'bndbndbnd',
+      phone: 'bnd',
+      adresse: 'bnd',
+      role: 'patient',
+      dpi_input: {
+        nss: '123456789',
+        mutuelle: 'HealthCare',
+        contact_info: 'contact@example.com',
+        medecin_traitant_email: 'medecin@gmail.com'
+      }
+    };
+    this.dpis.push(exampleDpi);
+    this.dataService.addData('dpi/add/', exampleDpi);
+    // this.dataService.addData('dpi/add/', exampleDpi).subscribe({
+    //
+    //   next: (response: any) => {
+    //     alert('DPI created successfully');
+    //     this.router.navigate(['/']);
+    //   },
+    //   error: (error: any) => {
+    //     console.error(error);
+    //     alert('Failed to create DPI');
+    //   }
+    // });
   }
 
 
@@ -76,10 +114,10 @@ export class DpiListComponent implements OnInit {
   //   }
   // }
   searchByNSS(): void {
-    this.dataService.searchByNSS(this.nssInput).subscribe({
+    this.dataService.getData(`dpi/search/?ns=${this.nssInput}`).subscribe({
       next: (data) => {
-        if (data.length > 0) {
-          this.selectedDpi = data[0];
+        if (data) {
+          this.selectedDpi = data;
           this.showModal = true; // Show the modal
         } else {
           alert('No DPI found with this NSS');
@@ -127,18 +165,18 @@ export class DpiListComponent implements OnInit {
   }
 
   // Fetch DPIs from MockAPI
-  fetchDpis(): void {
-    const apiUrl = 'https://676bfd0dbc36a202bb865e74.mockapi.io/api/dpi-list/DPI'; // Replace with your API URL
-    this.http.get<DPI[]>(apiUrl).subscribe({
-      next: (data) => {
-        this.dpis = data;
-        //console.log('Fetched DPIs:', this.dpis);
-      },
-      error: (err) => {
-        console.error('Error fetching DPIs:', err);
-      }
-    });
-  }
+  // fetchDpis(): void {
+  //   const apiUrl = 'https://676bfd0dbc36a202bb865e74.mockapi.io/api/dpi-list/DPI'; // Replace with your API URL
+  //   this.http.get<DPI[]>(apiUrl).subscribe({
+  //     next: (data) => {
+  //       this.dpis = data;
+  //       //console.log('Fetched DPIs:', this.dpis);
+  //     },
+  //     error: (err) => {
+  //       console.error('Error fetching DPIs:', err);
+  //     }
+  //   });
+  // }
 
   GoToDashBoard() {
     this.router.navigate(['/dashboard']);

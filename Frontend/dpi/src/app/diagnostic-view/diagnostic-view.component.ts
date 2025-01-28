@@ -5,16 +5,16 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-diagnostic-view',
-  imports: [ConsulationBoxComponent , RouterLink , RouterOutlet],
+  imports: [ConsulationBoxComponent , RouterLink],
   templateUrl: './diagnostic-view.component.html',
   styleUrl: './diagnostic-view.component.css'
 })
 export class DiagnosticViewComponent implements OnInit {
   @Input() diagnosticID!: string;
   consultations : { date: string, link: string , id : number }[] = [];
-  user : { nom: string , prenom: string , datedenaissance : string , age : string } ; 
-  
-  constructor() { 
+  user : { nom: string , prenom: string , datedenaissance : string , age : string } ;
+
+  constructor() {
     this.diagnosticID = '213'; // just so taht the Id is not empty
     this.consultations = [
       { date: '2025-01-01', link: '/document/1' , id : 1 },
@@ -27,7 +27,7 @@ export class DiagnosticViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    // get the data form the server with ID by that i mean the dates and id's fo the consultation 
+    // get the data form the server with ID by that i mean the dates and id's fo the consultation
   }
 
     nouvelleConsultation() {

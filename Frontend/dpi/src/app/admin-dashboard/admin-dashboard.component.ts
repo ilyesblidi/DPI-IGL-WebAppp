@@ -26,6 +26,7 @@ export class AdminDashboardComponent implements OnInit {
         // Fetch the user's profile data using the userId
         this.dataService.getData(`users/${this.userId}/`).subscribe({
           next: (data) => {
+
             this.medecin = data; // Store the user's profile data
             console.log('Fetched medecin data:', this.medecin);
             alert('Logged in successfely');
@@ -39,6 +40,7 @@ export class AdminDashboardComponent implements OnInit {
       }
     });
   }
+
   // Navbar click methods
   showNotifications() {
     alert('Notifications clicked!');

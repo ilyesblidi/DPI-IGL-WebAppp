@@ -47,20 +47,18 @@
       <table>
         <thead>
         <tr>
-          <th>ID</th>
           <th>Nom</th>
           <th>Prénom</th>
-<!--          <th>Âge</th>-->
+          <th>Phone</th>
           <th>NSS</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let dpi of dpis" (click)="viewDpiDetails(dpi.id_dpi)" class="dpi-row">
-          <td>{{ dpi.id_dpi }}</td>
           <td>{{ dpi.last_name }}</td>
           <td>{{ dpi.first_name }}</td>
-<!--          <td>{{ dpi.patient?.age || 'N/A' }}</td>-->
-          <td>{{ dpi.nss }}</td>
+          <td>{{ dpi.phone }}</td>
+          <td>{{ dpi.dpi_input.nss }}</td>
         </tr>
         </tbody>
       </table>

@@ -36,7 +36,4 @@ export class DataService {
     return this.http.delete<any>(`${this.baseUrl}/${endpoint}/${id}`, { headers });
   }
 
-  searchByNSS(nss: string): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/dpi/search/?ns=${nss}`, { headers: this.getHeaders() });
-  }
 }
