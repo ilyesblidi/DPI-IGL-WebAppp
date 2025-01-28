@@ -28,12 +28,12 @@
   <!-- Header with Profile -->
   <header class="dashboard-header">
     <div class="profile-info">
-      <img src="assets/profilepicture.png" alt="Profile Picture" class="profile-pic"/>
-      <div>
-        <h1>Welcome, Dr. {{ doctorName }}</h1>
-        <p><strong>Specialty:</strong> {{ doctorSpecialty }}</p>
-        <p><strong>Email:</strong> {{ doctorEmail }}</p>
-      </div>
+<!--      <img src="assets/profilepicture.png" alt="Profile Picture" class="profile-pic"/>-->
+<!--      <div>-->
+<!--        <h1>Welcome, Dr. {{ doctorName }}</h1>-->
+<!--        <p><strong>Specialty:</strong> {{ doctorSpecialty }}</p>-->
+<!--        <p><strong>Email:</strong> {{ doctorEmail }}</p>-->
+<!--      </div>-->
     </div>
   </header>
 
@@ -50,13 +50,6 @@
           <th>Actions</th>
         </tr>
         </thead>
-        <tbody>
-        <tr *ngFor="let appointment of appointments">
-          <td>{{ appointment.patientName }}</td>
-          <td>{{ appointment.time }}</td>
-          <td><button (click)="viewDpi(appointment.dpiId)">View DPI</button></td>
-        </tr>
-        </tbody>
       </table>
     </section>
 

@@ -30,16 +30,16 @@ export class LoginComponent {
 
         // Store tokens in localStorage
         this.authService.setToken(accessToken)
-        
+
         // Navigate based on user role
-        const userType = decodedToken.role 
+        const userType = decodedToken.role
         const userId = decodedToken.user_id
         if (userType === 'admin') {
           this.router.navigate(['/profile', userId]);
         } else if (userType === 'patient') {
           this.router.navigate(['/patient', userId]);
         } else if (userType === 'medecin') {
-          this.router.navigate(['/medecin', userId]);
+          this.router.navigate(['/dashboard', userId]);
         } else if (userType === 'infirmier') {
           this.router.navigate(['/infirmier', userId]);
         } else if (userType === 'radiologue') {

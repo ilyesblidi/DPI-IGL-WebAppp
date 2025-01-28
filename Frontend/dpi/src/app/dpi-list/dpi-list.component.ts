@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { DpiService } from '../dpi.service'; // Import DPI service
+import { DpiService } from '../dpi.service';
+import {DataService} from '../data.service'; // Import DPI service
 
 interface Patient {
   NSS: string;
@@ -32,21 +33,26 @@ export class DpiListComponent implements OnInit {
   searchBarVisible = false;
 
   showSearchOptions: boolean = false;
-  dpis: DPI[] = [];
-  selectedDpi: DPI | null = null;
+  dpis: any = [];
+  selectedDpi: any = null;
   showModal: boolean = false;
   nssInput: string = ''; // Bind to the input field for NSS
 
   id: string = '1';
 
-  constructor(private router: Router, private http: HttpClient, private dpiService: DpiService) { }
+  constructor(private router: Router, private dataService : DataService) { }
 
   ngOnInit(): void {
-    this.fetchDpis();
-    this.dpiService.getDpis().subscribe((data) => {
-      this.dpis = data;
+    this.dataService.getData('dpi/').subscribe({
+      next: (data) => {
+        this.dpis = data; // Store the user's profile data
+        console.log(this.dpis);
+      },
+      error: (error) => {
+        console.error('Error fetching profile:', error);
+        // Handle error (e.g., show an error message)
+      }
     });
-    //this.fetchPatientById(this.id);
   }
 
 
@@ -60,14 +66,30 @@ export class DpiListComponent implements OnInit {
     }
   }
 
-  searchByNSS(nss: string): void {
-    const dpi = this.dpis.find((dpi) => dpi.patient?.NSS === nss);
-    if (dpi) {
-      this.selectedDpi = dpi;
-      this.showModal = true; // Show the modal
-    } else {
-      alert('No DPI found with this NSS');
-    }
+  // searchByNSS(nss: string): void {
+  //   const dpi = this.dpis.find((dpi) => dpi.patient?.NSS === nss);
+  //   if (dpi) {
+  //     this.selectedDpi = dpi;
+  //     this.showModal = true; // Show the modal
+  //   } else {
+  //     alert('No DPI found with this NSS');
+  //   }
+  // }
+  searchByNSS(): void {
+    this.dataService.searchByNSS(this.nssInput).subscribe({
+      next: (data) => {
+        if (data.length > 0) {
+          this.selectedDpi = data[0];
+          this.showModal = true; // Show the modal
+        } else {
+          alert('No DPI found with this NSS');
+        }
+      },
+      error: (error) => {
+        console.error('Error searching DPI by NSS:', error);
+        // Handle error (e.g., show an error message)
+      }
+    });
   }
 
   validateNSS(event: any): void {
@@ -102,20 +124,6 @@ export class DpiListComponent implements OnInit {
 
   createNewDpi(): void {
     this.router.navigate(['/create-dpi']);
-  }
-
-  // Fetch DPIs from MockAPI
-  fetchDpis(): void {
-    const apiUrl = 'https://676bfd0dbc36a202bb865e74.mockapi.io/api/dpi-list/DPI'; // Replace with your API URL
-    this.http.get<DPI[]>(apiUrl).subscribe({
-      next: (data) => {
-        this.dpis = data;
-        //console.log('Fetched DPIs:', this.dpis);
-      },
-      error: (err) => {
-        console.error('Error fetching DPIs:', err);
-      }
-    });
   }
 
   GoToDashBoard() {

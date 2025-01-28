@@ -26,13 +26,13 @@ interface Patient {
 
 }
 
-interface DPI {
-  id_dpi: string;
-  date_creation: string;
-  commentaire_administratif: string;
-  chemin_QR_code: string;
-  patient?: Patient;
-}
+// interface DPI {
+//   id_dpi: string;
+//   date_creation: string;
+//   commentaire_administratif: string;
+//   chemin_QR_code: string;
+//   patient?: Patient;
+// }
 
 @Component({
   selector: 'app-create-dpi',
@@ -47,7 +47,7 @@ export class CreateDpiComponent {
     NSS: '',
     nom: '',
     prenom: '',
-    email: '', 
+    email: '',
     password:'',
     password2: '',
     date_creation: new Date().toISOString(),
@@ -61,13 +61,12 @@ export class CreateDpiComponent {
     medecin_traitant_email: '',
   };
 
-  
 
   commentaire_administratif: string = '';
-  chemin_QR_code: string = '/assets/qrcodes/default.png';
-  dpis: DPI[] = [];
+  // chemin_QR_code: string = '/assets/qrcodes/default.png';
+  // dpis: DPI[] = [];
 
-  constructor(private router: Router, private dpiService: DpiService, private dataService: DataService) {
+  constructor(private router: Router, private dataService: DataService) {
   }
 
   onSubmit(): void {
@@ -122,7 +121,7 @@ export class CreateDpiComponent {
 
 
     // Call service to save DPI
-    this.dataService.addData('dpi/add/', newDpi).subscribe({
+    this.dataService.addData('dpi/add/', dpitest).subscribe({
 
       next: (response: any) => {
         alert('DPI created successfully');
@@ -134,9 +133,9 @@ export class CreateDpiComponent {
       }
     });
 
-   
-  
-    
+
+
+
   }
 
 
