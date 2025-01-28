@@ -25,7 +25,7 @@ Content-Type: application/json
 ###
 # -------------------- create dpi -----------------
 POST http://127.0.0.1:8000/app/dpi/add/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1NTkwNzQwLCJpYXQiOjE3MzU1OTA0NDAsImp0aSI6ImJkNzQ4OWQzMmVjMTRkYTA5ZWMzY2FkMjZhZTViODc2IiwidXNlcl9pZCI6Miwicm9sZSI6Im1lZGVjaW4ifQ.qOrHoum430uXIwcdQOetZlo_5iGukLSS_aETn4D9BOQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4MDgzOTQ5LCJpYXQiOjE3MzgwODAzNDksImp0aSI6ImYxM2EwOTA3NTVlZTQ2M2E5OTk3MzQyOGEwMTQxODk2IiwidXNlcl9pZCI6MSwicm9sZSI6ImFkbWluIn0.CratGnlhhF275s5KLrirJelRiXRfmvwSFOVC0PvhoeE
 Content-Type: application/json
 
 {
@@ -34,8 +34,8 @@ Content-Type: application/json
     "email": "patient@gmail.com",
     "password": "bndbndbnd",
     "password2": "bndbndbnd",
-    "phone": "bnd",
-    "adresse": "bnd",
+    "phone": "0779759059",
+    "adresse": "Alger",
     "role": "patient",
     "dpi_input": {
         "nss": "patient_nss",
@@ -48,25 +48,25 @@ Content-Type: application/json
 ###
 # ---------------- register new user (not dpi) -----
 POST http://127.0.0.1:8000/app/users/add/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2MDAyNTExLCJpYXQiOjE3MzU5OTg5MTEsImp0aSI6IjJlNTFlMzc2ZGZhODRjOGY5NTg5NWVmYzI0MmU1NTdkIiwidXNlcl9pZCI6Niwicm9sZSI6ImFkbWluIn0.sVBJ4ArIkld2eJ9yBpbkvDhatJLSacPU02SKBw_06xY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4MDgzOTQ5LCJpYXQiOjE3MzgwODAzNDksImp0aSI6ImYxM2EwOTA3NTVlZTQ2M2E5OTk3MzQyOGEwMTQxODk2IiwidXNlcl9pZCI6MSwicm9sZSI6ImFkbWluIn0.CratGnlhhF275s5KLrirJelRiXRfmvwSFOVC0PvhoeE
 Content-Type: application/json
 
 {
-    "first_name":"Mohamed",
-    "last_name":"Khalil",
-    "email":"admin2@gmail.com",
+    "first_name":"pharmacien",
+    "last_name":"pharmacien",
+    "email":"pharmacien2@gmail.com",
     "password":"bndbndbnd",
     "password2":"bndbndbnd",
     "phone":"0779759059",
     "adresse":"Ain Trig",
-    "role":"admin"
+    "role":"pharmacien"
 }
 
 ###---------------------------------------------------------------------------------------------------
 
 #-----------------create diagnostic---------------
 POST http://127.0.0.1:8000/app/create_diagnostic/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1NTkwNzQwLCJpYXQiOjE3MzU1OTA0NDAsImp0aSI6ImJkNzQ4OWQzMmVjMTRkYTA5ZWMzY2FkMjZhZTViODc2IiwidXNlcl9pZCI6Miwicm9sZSI6Im1lZGVjaW4ifQ.qOrHoum430uXIwcdQOetZlo_5iGukLSS_aETn4D9BOQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4MDg0MDkyLCJpYXQiOjE3MzgwODA0OTIsImp0aSI6ImFiMDViNWIxNGI4YzRmNDk4MmNiNmI5MmE5OTE5Y2Q0IiwidXNlcl9pZCI6Miwicm9sZSI6Im1lZGVjaW4ifQ.438KQHkc1qmPiQaaggdXA39VvMo-nOOI-oRqubcux0M
 Content-Type: application/json
 
 {
@@ -235,7 +235,7 @@ Content-Type: application/json
 ###
 #-----------------create ordanance---------------
 POST http://127.0.0.1:8000/app/create_ordanance/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1NTkwNzQwLCJpYXQiOjE3MzU1OTA0NDAsImp0aSI6ImJkNzQ4OWQzMmVjMTRkYTA5ZWMzY2FkMjZhZTViODc2IiwidXNlcl9pZCI6Miwicm9sZSI6Im1lZGVjaW4ifQ.qOrHoum430uXIwcdQOetZlo_5iGukLSS_aETn4D9BOQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4MDg0MDkyLCJpYXQiOjE3MzgwODA0OTIsImp0aSI6ImFiMDViNWIxNGI4YzRmNDk4MmNiNmI5MmE5OTE5Y2Q0IiwidXNlcl9pZCI6Miwicm9sZSI6Im1lZGVjaW4ifQ.438KQHkc1qmPiQaaggdXA39VvMo-nOOI-oRqubcux0M
 Content-Type: application/json
 
 {
@@ -246,7 +246,7 @@ Content-Type: application/json
 ###
 #-----------------list ordanance---------------
 POST http://127.0.0.1:8000/app/ordanances/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1NTkwNzQwLCJpYXQiOjE3MzU1OTA0NDAsImp0aSI6ImJkNzQ4OWQzMmVjMTRkYTA5ZWMzY2FkMjZhZTViODc2IiwidXNlcl9pZCI6Miwicm9sZSI6Im1lZGVjaW4ifQ.qOrHoum430uXIwcdQOetZlo_5iGukLSS_aETn4D9BOQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4MDg1NDkyLCJpYXQiOjE3MzgwODE4OTIsImp0aSI6ImI1MTJkMGMxNTZiMTQ1OGM5OWM3ZDJhNjk1ZDM5ZGQ0IiwidXNlcl9pZCI6Miwicm9sZSI6Im1lZGVjaW4ifQ.1sxGbucOQS36ivP19gfoaXTAv1YrhEeC0ukEd4TiPmg
 Content-Type: application/json
 
 {
@@ -420,3 +420,13 @@ Content-Type: application/json
 GET http://127.0.0.1:8000/app/dpi/search/?ns=patient_nss
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1NTYwODc5LCJpYXQiOjE3MzU1NTcyNzksImp0aSI6IjMyMjU0MDA1NWY1ZjRmZGI5MDE4MTA3NDI4ZjZjYjdkIiwidXNlcl9pZCI6NCwicm9sZSI6ImluZmlybWllciJ9.So4E7tMWSrfp0BDlWdmdanesnBaHH5rKlR-1GiU7LUw
 Content-Type: application/json
+
+###
+# -------------------- validate ordonnance -----------------
+POST http://127.0.0.1:8000/app/ordonnance/validate/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY5NjE5MjQyLCJpYXQiOjE3MzgwODMyNDIsImp0aSI6ImNjYmMwNmU5MDJlNDQ2NmQ5ZGFjMjllYzEyMWRiOGQzIiwidXNlcl9pZCI6MSwicm9sZSI6ImFkbWluIn0.Ktq-blHi4-ddlI-O312FxMHVAkPJbK-gpbnLO3NgrwU
+Content-Type: application/json
+
+{
+  "ordonnance_id": "1"
+}
