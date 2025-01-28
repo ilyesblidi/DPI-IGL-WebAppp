@@ -32,3 +32,15 @@
 
 4. **Access the Application**
    Open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+## Api Documentation 
+**Navigate to the documentation file **
+   ```sh
+   cd Backend/test.http
+   ```
+you will see examples of how to interact with the api endpoints 
+
+## Database setup
+
+
+   
