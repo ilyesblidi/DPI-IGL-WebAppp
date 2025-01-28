@@ -23,11 +23,8 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
-              },
-              {
-                "glob": "**/*",
-                "input": "src/assets"
+                "input": "src/assets",
+                "output": "/assets"
               }
             ],
             "styles": [
@@ -90,15 +87,13 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "src/assets"
-              },
-              {
-                "glob": "**/*",
-                "input": "public"
+                "input": "src/assets",
+                "output": "/assets"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/tailwind.css"
             ],
             "scripts": []
           }
