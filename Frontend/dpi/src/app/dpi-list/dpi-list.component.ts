@@ -118,6 +118,8 @@ export class DpiListComponent implements OnInit {
     });
   }
 
+  
+
   GoToDashBoard() {
     this.router.navigate(['/dashboard']);
   }
