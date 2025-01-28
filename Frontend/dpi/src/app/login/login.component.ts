@@ -39,7 +39,7 @@ export class LoginComponent {
         } else if (userType === 'patient') {
           this.router.navigate(['/patient', userId]);
         } else if (userType === 'medecin') {
-          this.router.navigate(['/medecin', userId]);
+          this.router.navigate(['/dashboard', userId]);
         } else if (userType === 'infirmier') {
           this.router.navigate(['/infirmier', userId]);
         } else if (userType === 'radiologue') {

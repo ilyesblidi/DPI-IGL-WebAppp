@@ -18,6 +18,7 @@ export const routes: Routes = [
     { path: 'new-consultation', loadComponent:()=> import('./Consultaiton-view/consultation-view.component').then(m => m.ConsultationViewComponent) },
     // {path: 'laborantin/:id', loadComponent: () => import('./laborantin/laborantin.component').then(m => m.LaborantinComponent) },
     // {path: 'radiologue/:id', loadComponent: () => import('./radiologue/radiologue.component').then(m => m.RadiologueComponent) },
+    { path: 'dpi-detail/:id/diagnostic-list', loadComponent: () => import('./diagnostic-list/diagnostic-list.component').then(m => m.DiagnosticListComponent) },
     { path: '', redirectTo: '/home', pathMatch: 'full' }
   ];
 
