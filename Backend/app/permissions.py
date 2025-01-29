@@ -27,3 +27,13 @@ class isLaborantin(BasePermission):
 class isPharmacien(BasePermission):
     def has_permission(self, request, view):
         return request.user.is_authenticated and request.user.role == 'pharmacien'
+
+from rest_framework.permissions import BasePermission
+
+class IsAdminOrMedecin(BasePermission):
+    def has_permission(self, request, view):
+        return request.user.is_authenticated and request.user.role in ['admin', 'medecin']
+
+class IsAdminOrMedecinOrPatient(BasePermission):
+    def has_permission(self, request, view):
+        return request.user.is_authenticated and request.user.role in ['admin', 'medecin', 'patient']

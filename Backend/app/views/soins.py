@@ -4,7 +4,7 @@ from app.serializers.soins import *
 from app.models import Soin
 
 class AddSoinView(generics.CreateAPIView):
-    #permission_classes = [isInfirmier]
+    permission_classes = [isInfirmier]
     serializer_class = AddSoinSerializer
 
 class ListSoinsView(generics.ListAPIView):

@@ -47,12 +47,19 @@ try:
     login_button.click()
 
     # going to dpi listing
+    # OK the alert
+    WebDriverWait(driver, 10).until(EC.alert_is_present())
+    alert = driver.switch_to.alert
+    alert.accept()
     dpi_list = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//li[span[text()='DPI List']]"))
     )
     dpi_list.click()
 
     # go to dpi add page
+    WebDriverWait(driver, 10).until(EC.alert_is_present())
+    alert = driver.switch_to.alert
+    alert.accept()
     dpi_add = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//button[i[contains(@class, 'fa-plus')]]"))
     )
