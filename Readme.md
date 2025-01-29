@@ -57,3 +57,18 @@ You will see examples of how to interact with the API endpoints.
 
 ### Tests
 Some functionalities have been tested using **pytest** and **selenium**, in [tests](Backend/app/tests/)
+
+
+### Backend Documentation
+The backend documentation is generated using Sphinx and can be found in the [docs](Backend/docs/) directory. To build the documentation, navigate to the `docs` directory and run:
+```sh
+make html
+```
+The generated documentation will be available in the `_build/html` directory.
+
+### Frontend Documentation
+The frontend documentation is generated using TypeDoc and can be found in the [docs](Frontend/dpi/docs/) directory. To build the documentation, navigate to the `dpi` directory and run:
+```sh
+npx typedoc
+```
+The generated documentation will be available in the `docs` directory.
