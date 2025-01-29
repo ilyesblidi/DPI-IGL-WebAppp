@@ -96,12 +96,6 @@ export class DpiListComponent implements OnInit {
 
   toggleSearchBar() {
     this.searchBarVisible = !this.searchBarVisible;
-    const inputField = document.querySelector('.search-input') as HTMLElement;
-    if (this.searchBarVisible) {
-      inputField.classList.add('visible');
-    } else {
-      inputField.classList.remove('visible');
-    }
   }
 
   // searchByNSS(nss: string): void {
@@ -179,6 +173,6 @@ export class DpiListComponent implements OnInit {
   // }
 
   GoToDashBoard() {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/']);
   }
 }

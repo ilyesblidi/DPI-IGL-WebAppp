@@ -20,7 +20,8 @@
         <input
           type="text"
           [(ngModel)]="nssInput"
-          class="search-input hidden"
+          class="search-input"
+          [class.visible]="searchBarVisible"
           maxlength="9"
           (input)="validateNSS($event)"
           (keyup.enter)="searchByNSS()"
