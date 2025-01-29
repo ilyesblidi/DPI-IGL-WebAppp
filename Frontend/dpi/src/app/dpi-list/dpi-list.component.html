@@ -13,7 +13,6 @@
     <!-- Search and Action Buttons -->
     <div class="button-row">
 
-      <!-- Search Bar -->
       <div class="search-bar-container">
         <button class="search-icon" (click)="toggleSearchBar()">
           <i class="fa fa-search"></i>
@@ -21,10 +20,11 @@
         <input
           type="text"
           [(ngModel)]="nssInput"
-          class="search-input hidden"
+          class="search-input"
+          [class.visible]="searchBarVisible"
           maxlength="9"
           (input)="validateNSS($event)"
-          (keyup.enter)="searchByNSS(nssInput)"
+          (keyup.enter)="searchByNSS()"
         />
       </div>
 
@@ -48,10 +48,9 @@
       <table>
         <thead>
         <tr>
-          <th>ID</th>
           <th>Nom</th>
           <th>Prénom</th>
-<!--          <th>Âge</th>-->
+          <th>Phone</th>
           <th>NSS</th>
         </tr>
         </thead>
@@ -62,13 +61,13 @@
           <td>{{ dpi.user?.last_name}}</td>
 <!--          <td>{{ dpi.patient?.age || 'N/A' }}</td>-->
           <td>{{ dpi.nss }}</td>
+
         </tr>
         </tbody>
       </table>
     </div>
   </div>
 
-  <!-- Modal for Search by NSS -->
   <div class="modal-overlay" *ngIf="showModal">
     <div class="modal-content">
       <div class="modal-header">
@@ -78,7 +77,7 @@
       <div *ngIf="selectedDpi; else noResult">
         <div class="modal-body">
           <div class="modal-left">
-            <p><strong>ID:</strong> {{ selectedDpi.id_dpi }}</p>
+            <p><strong>ID:</strong> {{ selectedDpi.first_name }}</p>
             <p><strong>Date de création:</strong> {{ selectedDpi.date_creation }}</p>
             <p><strong>NSS:</strong> {{ selectedDpi.user?.first_name }}</p>
             <p><strong>Nom du patient:</strong> {{ selectedDpi.user?.last_name}} {{ selectedDpi.user?.last_name }}</p>
@@ -98,4 +97,5 @@
       </ng-template>
     </div>
   </div>
+
 </div>

@@ -30,6 +30,7 @@ interface DPI {
   user?: user;
 }
 
+
 @Component({
   selector: 'app-dpi-list',
   standalone: true,
@@ -52,8 +53,8 @@ export class DpiListComponent implements OnInit {
   };
 
   showSearchOptions: boolean = false;
-  dpis: DPI[] = [];
-  selectedDpi: DPI | null = null;
+  dpis: any = [];
+  selectedDpi: any = null;
   showModal: boolean = false;
   nssInput: string = ''; // Bind to the input field for NSS
 
@@ -64,17 +65,12 @@ export class DpiListComponent implements OnInit {
   ngOnInit(): void {
     this.fetchDpis();
     
+
   }
 
 
   toggleSearchBar() {
     this.searchBarVisible = !this.searchBarVisible;
-    const inputField = document.querySelector('.search-input') as HTMLElement;
-    if (this.searchBarVisible) {
-      inputField.classList.add('visible');
-    } else {
-      inputField.classList.remove('visible');
-    }
   }
 
   searchByNSS(nss: string): void {
@@ -85,6 +81,7 @@ export class DpiListComponent implements OnInit {
     } else {
       alert('No DPI found with this NSS');
     }
+
   }
 
   validateNSS(event: any): void {
@@ -144,7 +141,8 @@ export class DpiListComponent implements OnInit {
 
   
 
+
   GoToDashBoard() {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/']);
   }
 }

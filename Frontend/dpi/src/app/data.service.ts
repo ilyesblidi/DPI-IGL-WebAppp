@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class DataService {
-  private baseUrl = 'http://localhost:8000/app'; // Base URL of the backend
+  private baseUrl = 'http://127.0.0.1:8000/app'; // Base URL of the backend
 
   constructor(private http: HttpClient) {}
 
@@ -35,4 +35,5 @@ export class DataService {
     const headers = this.getHeaders();
     return this.http.delete<any>(`${this.baseUrl}/${endpoint}/${id}`, { headers });
   }
+
 }

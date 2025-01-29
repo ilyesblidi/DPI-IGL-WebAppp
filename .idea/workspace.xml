@@ -6,9 +6,56 @@
   <component name="ChangeListManager">
     <list default="true" id="fd12cfd5-3172-4b0c-912b-760d79a4c71b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/app/models/Hospitalisation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/app/models/Hospitalisation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/app/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/TP_IGL/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/TP_IGL/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/TP_IGL/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/TP_IGL/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/.tsbuildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps/@angular_forms.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps/@angular_forms.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps/@angular_router.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps/@angular_router.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps_ssr/@angular_forms.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps_ssr/@angular_forms.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps_ssr/@angular_ssr.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps_ssr/@angular_ssr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps_ssr/@angular_ssr_node.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps_ssr/@angular_ssr_node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps_ssr/@angular_ssr_node.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps_ssr/@angular_ssr_node.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps_ssr/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps_ssr/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps_ssr/express.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/.angular/cache/19.0.4/dpi/vite/deps_ssr/express.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/at-rule.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/at-rule.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/comment.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/comment.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/container.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/container.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/css-syntax-error.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/css-syntax-error.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/declaration.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/declaration.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/document.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/document.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/fromJSON.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/fromJSON.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/input.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/input.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/lazy-result.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/lazy-result.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/list.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/list.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/no-work-result.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/no-work-result.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/node.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/node.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/node.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/parse.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/parse.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/postcss.d.mts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/postcss.d.mts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/postcss.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/postcss.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/postcss.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/postcss.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/previous-map.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/previous-map.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/processor.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/processor.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/processor.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/processor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/result.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/result.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/root.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/root.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/rule.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/rule.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/stringifier.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/stringifier.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/stringify.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/stringify.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/warning.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/lib/warning.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/node_modules/postcss/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/src/app/admin-dashboard/admin-dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/src/app/admin-dashboard/admin-dashboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/src/app/dpi-list/dpi-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/src/app/dpi-list/dpi-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/src/app/dpi-list/dpi-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/src/app/dpi-list/dpi-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/dpi/src/tailwind.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/dpi/src/tailwind.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,20 +80,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;khalil&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/hp/Desktop/TP_IGL&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.data.service.ts.executor": "Run",
+    "Node.js.dpi-list.component.ts.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/User/Documents/GitHub/DPI-IGL-WebAppp/Backend/TP_IGL",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "ts.external.directory.path": "C:\\Users\\User\\Documents\\GitHub\\DPI-IGL-WebAppp\\Frontend\\dpi\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\GitHub\DPI-IGL-WebAppp\Backend\TP_IGL" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="TP_IGL" type="Python.DjangoServer" factoryName="Django server">
       <module name="TP_IGL" />
@@ -73,6 +136,13 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -90,6 +160,7 @@
       <workItem from="1733759183624" duration="4036000" />
       <workItem from="1733859814578" duration="4197000" />
       <workItem from="1733915573240" duration="2410000" />
+      <workItem from="1738050922994" duration="9483000" />
     </task>
     <servers />
   </component>

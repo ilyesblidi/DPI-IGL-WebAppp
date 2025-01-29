@@ -1,0 +1,7 @@
+// filepath: /workspaces/DPI-IGL-WebAppp/Frontend/typedoc.json
+{
+    "entryPoints": ["src"],
+    "entryPointStrategy": "expand",
+    "out": "docs/typedoc",
+    "exclude": ["**/node_modules/**", "**/docs/**"]
+  }

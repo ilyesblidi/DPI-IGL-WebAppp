@@ -30,9 +30,9 @@ export class LoginComponent {
 
         // Store tokens in localStorage
         this.authService.setToken(accessToken)
-        
+
         // Navigate based on user role
-        const userType = decodedToken.role 
+        const userType = decodedToken.role
         const userId = decodedToken.user_id
         if (userType === 'admin') {
           this.router.navigate(['dashboard', userId]);

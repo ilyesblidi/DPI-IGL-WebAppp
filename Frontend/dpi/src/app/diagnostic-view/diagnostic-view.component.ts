@@ -13,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DiagnosticViewComponent implements OnInit {
   @Input() diagnosticID!: string;
+
   diagId!: string;
   dpiId!: string;
   //consultations : { date: string, link: string , id : number }[] = [];
@@ -41,6 +42,7 @@ export class DiagnosticViewComponent implements OnInit {
     
 
 
+
   }
 
   payload = { "diagnostic": "init" , dpi: 0 , id_dpi : 0};
@@ -49,6 +51,7 @@ export class DiagnosticViewComponent implements OnInit {
   // set up the on init to retrieve the needed data 
 
   ngOnInit() {
+
     this.dpiId = this.route.snapshot.paramMap.get('id')!;
     this.diagId = this.route.snapshot.paramMap.get('idDiag')!;
     this.fetchDpiDetails();
@@ -87,6 +90,8 @@ export class DiagnosticViewComponent implements OnInit {
       }
     });
     
+    // get the data form the server with ID by that i mean the dates and id's fo the consultation
+
   }
 
 

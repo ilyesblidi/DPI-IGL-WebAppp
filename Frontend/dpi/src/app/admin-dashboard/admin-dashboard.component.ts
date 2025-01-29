@@ -5,17 +5,15 @@ import {ActivatedRoute} from '@angular/router';
 import { DataService } from '../data.service';
 
 
+
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.css'],
-  imports: [
-    NgForOf
-  ],
-  encapsulation: ViewEncapsulation.None // Ensures styles apply globally
+  encapsulation: ViewEncapsulation.None, // Ensures styles apply globally
 })
-
 export class AdminDashboardComponent implements OnInit {
+
   id!: string ; 
   doctorName = 'John Doe';
   doctorSpecialty = 'Cardiologist';
@@ -57,6 +55,7 @@ export class AdminDashboardComponent implements OnInit {
     
   }
 
+
   // Navbar click methods
   showNotifications() {
     alert('Notifications clicked!');
@@ -84,9 +83,8 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   GoToAdminProfil() {
-    this.router.navigate(['/profil']);
+    this.router.navigate(['/profile',this.userId]);
   }
-
 
   // Action methods
   viewDpi(dpiId: number): void {
