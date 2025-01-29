@@ -68,7 +68,7 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   GoToAdminProfil() {
-    this.router.navigate(['/profil']);
+    this.router.navigate(['/profile',this.userId]);
   }
 
   // Action methods
