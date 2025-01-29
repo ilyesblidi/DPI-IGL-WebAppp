@@ -1,6 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Router} from '@angular/router';
+import {NgForOf} from '@angular/common';
+import {ActivatedRoute} from '@angular/router';
 import { DataService } from '../data.service';
+
+
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -9,37 +13,48 @@ import { DataService } from '../data.service';
   encapsulation: ViewEncapsulation.None, // Ensures styles apply globally
 })
 export class AdminDashboardComponent implements OnInit {
-  // Variable to hold logged-in user's data (medecin)
-  medecin: any = null; // Initialize as empty object
-  userId: any = null;
 
-  constructor(private router: Router, private route : ActivatedRoute, private dataService : DataService)
-  {}// Inject DataService for API calls
+  id!: string ; 
+  doctorName = 'John Doe';
+  doctorSpecialty = 'Cardiologist';
+  doctorEmail = 'john.doe@example.com';
+
+  appointments = [
+    { patientName: 'John Smith', time: '10:00 AM', dpiId: 1 },
+    { patientName: 'Alice Johnson', time: '11:30 AM', dpiId: 2 }
+  ];
+
+  recentConsultations = [
+    { patientName: 'Emily Brown', date: '2024-12-25', dpiId: 3 },
+    { patientName: 'Michael White', date: '2024-12-24', dpiId: 4 }
+  ];
+
+  resources = [
+    { name: 'Clinical Guidelines', link: 'https://example.com/guidelines' },
+    { name: 'Hospital Policies', link: 'https://example.com/policies' }
+  ];
+
+  constructor( private router : Router , private route : ActivatedRoute , private dataservice : DataService) {}
 
   ngOnInit(): void {
-    // Capture the userId from the route parameters
-    this.route.paramMap.subscribe(params => {
-      this.userId = params.get('id');
-      console.log(params.get('id'));
-
-      if (this.userId) {
-        // Fetch the user's profile data using the userId
-        this.dataService.getData(`users/${this.userId}/`).subscribe({
-          next: (data) => {
-
-            this.medecin = data; // Store the user's profile data
-            console.log('Fetched medecin data:', this.medecin);
-            alert('Logged in successfely');
-          },
-          error: (error) => {
-            console.error('Error fetching profile:', error);
-            alert('Failed');
-            // Handle error (e.g., show an error message)
-          }
-        });
+    this.id = this.route.snapshot.paramMap.get('id')!;
+    this.dataservice.getData(`users/${this.id}/`).subscribe({
+      next: (user) => {
+        this.doctorName = user.first_name;
+        this.doctorEmail = user.email;
+      },error: (error: any) => {
+        console.error(error);
+        alert('Failed to create DPI');
       }
     });
   }
+  onSubmit() {
+
+      
+
+    
+  }
+
 
   // Navbar click methods
   showNotifications() {
@@ -95,4 +110,6 @@ export class AdminDashboardComponent implements OnInit {
   markAsRead(notificationId: number): void {
     console.log(`Marking notification ${notificationId} as read`);
   }
+
+  
 }
