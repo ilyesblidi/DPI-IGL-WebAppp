@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DpiService } from '../dpi.service'; // Import DPI service
+import { DataService } from '../data.service';
 
 interface Patient {
   NSS: string;
@@ -11,12 +12,22 @@ interface Patient {
   prenom: string;
 }
 
+interface user {
+first_name : string;
+last_name : string;
+email : string;
+nss : string; 
+creationDate : string;
+
+}
+
 interface DPI {
   id_dpi: string;
+  nss : string;
   date_creation: string;
   commentaire_administratif: string;
   chemin_QR_code: string;
-  patient?: Patient;
+  user?: user;
 }
 
 @Component({
@@ -31,6 +42,15 @@ export class DpiListComponent implements OnInit {
 
   searchBarVisible = false;
 
+
+  user = {
+    name: '',
+    surname: '',
+    email: '',
+    nss: '',
+    creationDate: '',
+  };
+
   showSearchOptions: boolean = false;
   dpis: DPI[] = [];
   selectedDpi: DPI | null = null;
@@ -39,14 +59,11 @@ export class DpiListComponent implements OnInit {
 
   id: string = '1';
 
-  constructor(private router: Router, private http: HttpClient, private dpiService: DpiService) { }
+  constructor(private router: Router, private http: HttpClient, private dpiService: DpiService , private dataservice : DataService) { }
 
   ngOnInit(): void {
     this.fetchDpis();
-    this.dpiService.getDpis().subscribe((data) => {
-      this.dpis = data;
-    });
-    //this.fetchPatientById(this.id);
+    
   }
 
 
@@ -61,7 +78,7 @@ export class DpiListComponent implements OnInit {
   }
 
   searchByNSS(nss: string): void {
-    const dpi = this.dpis.find((dpi) => dpi.patient?.NSS === nss);
+    const dpi = this.dpis.find((dpi) => dpi.user?.nss === nss);
     if (dpi) {
       this.selectedDpi = dpi;
       this.showModal = true; // Show the modal
@@ -106,16 +123,23 @@ export class DpiListComponent implements OnInit {
 
   // Fetch DPIs from MockAPI
   fetchDpis(): void {
-    const apiUrl = 'https://676bfd0dbc36a202bb865e74.mockapi.io/api/dpi-list/DPI'; // Replace with your API URL
-    this.http.get<DPI[]>(apiUrl).subscribe({
-      next: (data) => {
-        this.dpis = data;
-        //console.log('Fetched DPIs:', this.dpis);
-      },
-      error: (err) => {
-        console.error('Error fetching DPIs:', err);
-      }
-    });
+
+
+      
+      this.dataservice.getData(`dpi/`).subscribe({
+        next: (data) => {
+          this.dpis = data;
+          console.log(data);
+        },
+        error: (err) => {
+          alert("user does not exist ")
+          console.error('Error fetching data:', err);
+        }
+      });
+      
+    
+
+
   }
 
   

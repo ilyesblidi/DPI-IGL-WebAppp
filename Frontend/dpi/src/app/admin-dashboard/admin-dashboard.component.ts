@@ -1,6 +1,9 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgForOf} from '@angular/common';
+import {ActivatedRoute} from '@angular/router';
+import { DataService } from '../data.service';
+
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -13,7 +16,7 @@ import {NgForOf} from '@angular/common';
 })
 
 export class AdminDashboardComponent implements OnInit {
-
+  id!: string ; 
   doctorName = 'John Doe';
   doctorSpecialty = 'Cardiologist';
   doctorEmail = 'john.doe@example.com';
@@ -33,9 +36,26 @@ export class AdminDashboardComponent implements OnInit {
     { name: 'Hospital Policies', link: 'https://example.com/policies' }
   ];
 
-  constructor( private router : Router) {}
+  constructor( private router : Router , private route : ActivatedRoute , private dataservice : DataService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get('id')!;
+    this.dataservice.getData(`users/${this.id}/`).subscribe({
+      next: (user) => {
+        this.doctorName = user.first_name;
+        this.doctorEmail = user.email;
+      },error: (error: any) => {
+        console.error(error);
+        alert('Failed to create DPI');
+      }
+    });
+  }
+  onSubmit() {
+
+      
+
+    
+  }
 
   // Navbar click methods
   showNotifications() {
@@ -92,4 +112,6 @@ export class AdminDashboardComponent implements OnInit {
   markAsRead(notificationId: number): void {
     console.log(`Marking notification ${notificationId} as read`);
   }
+
+  
 }
