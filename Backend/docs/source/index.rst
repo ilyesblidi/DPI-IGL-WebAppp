@@ -15,3 +15,10 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
 
+   app
+   app.models
+   app.migrations
+   app.admin
+   app.apps
+   app.permissions
+   app.urls
